@@ -45,4 +45,4 @@ fileOut.close()
 
 # Open the html file in the browser
 print("Opening the html file...")
-webbrowser.open("test.html", new=new)
+webbrowser.open("outFile.html", new=new)
