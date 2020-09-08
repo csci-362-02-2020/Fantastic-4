@@ -2,7 +2,7 @@ import os
 import webbrowser
 
 # Open the file
-fileOut = open("test.html", "w")
+fileOut = open("outFile.html", "w")
 
 new = 2 # open in a new tab, if possible
 
