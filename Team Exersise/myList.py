@@ -38,10 +38,10 @@ print("Constructing the html file...")
 fileOut.write("<table>\n\n")
 
 # Print the folders to the html file
-fileOut.write("<tr><th><strong>Folders in current directory:</strong></tr></th>\n\n")
+fileOut.write("\t<tr><th><strong>Folders in current directory:</strong></tr></th>\n\n")
 
 for item in folderList:
-    fileOut.write("<tr><td>" + item +"</td></tr>\n\n")
+    fileOut.write("\t<tr><td>" + item +"</td></tr>\n\n")
 
 # Html for the table
 fileOut.write("</table>\n\n<br />\n\n")
@@ -50,13 +50,13 @@ fileOut.write("</table>\n\n<br />\n\n")
 fileOut.write("<table>\n\n")
 
 # Print the files to the html file
-fileOut.write("<tr><th><strong>Files in current directory:</strong></tr></th>\n\n")
+fileOut.write("\t<tr><th><strong>Files in current directory:</strong></tr></th>\n\n")
 
 for item in fileList:
-    fileOut.write("<tr><td>" + item +"</td></tr>\n\n")
+    fileOut.write("\t<tr><td>" + item +"</td></tr>\n\n")
 
 # Html for the table
-fileOut.write("</table>\n\n<br />\n\n")
+fileOut.write("</table>")
 
 # Close the file
 fileOut.close()
