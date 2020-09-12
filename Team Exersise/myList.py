@@ -12,6 +12,7 @@ fileOut.write("\n\n")
 
 new = 2 # open in a new tab, if possible
 
+# Get all items in current directory
 osDIR = os.listdir(os.getcwd())
 
 # Create a list to hold the names of all the folders
