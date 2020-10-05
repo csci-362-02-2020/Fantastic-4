@@ -11,13 +11,13 @@ def compileJavaFile(fileName):
     # This assumes that the java file is in a different directory
 def compileJavaFileAtLocation(filePath):
 
-    # Split file path
-    splitFilePath = filePath.split("/")
-
     # Change the directory to the given path
     os.chdir(filePath[0:filePath.rindex("/")])
 
-    # Assign the name of the file
+    # Split file path
+    splitFilePath = filePath.split("/")
+
+    # Parse out the name of the file
     fileName = splitFilePath[len(splitFilePath)-1]
 
     # Compile the Java file
