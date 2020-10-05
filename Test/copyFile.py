@@ -2,9 +2,7 @@
 import os
 
 def copyFileAndDeleteFirstLine(fromPath, toPath):
-    # Change directory to be in the Fantastic-4 directory.
-    os.chdir("..")
-
+    
     # Create the command to copy the file
     command = "cp " + fromPath + " " + toPath
 
@@ -22,8 +20,6 @@ def copyFileAndDeleteFirstLine(fromPath, toPath):
     os.system("rm temp.txt")
 
 def copyFile(fromPath, toPath):
-    # Change directory to be in the Fantastic-4 directory.
-    os.chdir("..")
 
     # Create the command to copy the file
     command = "cp " + fromPath + " " + toPath
@@ -32,8 +28,8 @@ def copyFile(fromPath, toPath):
     os.system(command)
     os.chdir(toPath)
 
-filePath = "stem-master/org.eclipse.stem.core/src/org/eclipse/stem/core/math/BinomialDistributionUtil.java"
-toLocation = "Test/"
+filePath = "../TeamExersise/outFile.html"
+toLocation = "."
 
 # Call the function
 copyFileAndDeleteFirstLine(filePath, toLocation)
