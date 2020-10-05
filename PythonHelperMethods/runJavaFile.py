@@ -33,7 +33,7 @@ def runJavaFileAtLocation(filePath):
 fileName = "TestMethod.java"
 
 # File Path
-filePath = "../filesToTest/TestMethod.class"
+filePath = "../Test/TestMethod.class"
 
 # Call the function
-runJavaFile(fileName)
+runJavaFileAtLocation(filePath)

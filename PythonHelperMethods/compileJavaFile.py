@@ -27,7 +27,7 @@ def compileJavaFileAtLocation(filePath):
 fileName = "TestMethod.java"
 
 # File Path
-filePath = "../filesToTest/LatLong.java"
+filePath = "../Test/TestMethod.java"
 
 # Call the function
-compileJavaFile(fileName)
+compileJavaFileAtLocation(filePath)
