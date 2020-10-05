@@ -11,7 +11,7 @@ def removeFile(fileName):
 
 # This function will remove a file
     # This assumes that the java file is in a different directory
-def removeFileAtLocation(fileName):
+def removeFileAtLocation(filePath):
 
     # Change the directory to the given path
     os.chdir(filePath[0:filePath.rindex("/")])
