@@ -25,6 +25,7 @@ def compileAndRunJavaFileAtLocation(filePath):
     # Change the directory to the given path
     os.chdir(filePath[0:filePath.rindex("/")])
 
+    # Assign the name of the file
     fileName = splitFilePath[len(splitFilePath)-1]
 
     # Compile the file
@@ -38,7 +39,6 @@ def compileAndRunJavaFileAtLocation(filePath):
 
     # Remove the class file
     os.system("rm " + splitFileName[0] + ".class")
-
 
 # File Name
 fileName = "TestMethod.java"
