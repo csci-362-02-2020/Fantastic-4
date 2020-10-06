@@ -1,8 +1,8 @@
 {
   "id": 1,
   "requirement": "",
-  "component": "",
-  "method": "",
+  "component": "../project/StochasticSEIRDiseaseModelTest.java",
+  "method": "computeNoise",
   "input": "",
   "output": ""
 }
