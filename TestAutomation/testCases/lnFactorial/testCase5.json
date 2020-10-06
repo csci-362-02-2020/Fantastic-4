@@ -1,8 +1,8 @@
 {
   "id": 5,
   "requirement": "",
-  "component": "",
-  "method": "",
+  "component": "../project/BinomialDistributionUtil.java",
+  "method": "lnFactorial",
   "input": "",
   "output": ""
 }
