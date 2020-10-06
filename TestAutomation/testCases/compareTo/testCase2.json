@@ -1,8 +1,8 @@
 {
   "id": 2,
   "requirement": "",
-  "component": "",
-  "method": "",
+  "component": "../project/PhaseSpaceCoordinate.java",
+  "method": "compareTo",
   "input": "",
   "output": ""
 }
