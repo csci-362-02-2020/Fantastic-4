@@ -3,6 +3,7 @@
   "requirement": "",
   "component": "../project/PhaseSpaceCoordinate.java",
   "method": "compareTo",
+  "driver": "",
   "input": "",
   "output": ""
 }
