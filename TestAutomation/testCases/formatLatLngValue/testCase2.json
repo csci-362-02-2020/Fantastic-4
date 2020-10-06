@@ -1,8 +1,8 @@
 {
   "id": 2,
   "requirement": "",
-  "component": "",
-  "method": "",
+  "component": "../project/LatLong.java",
+  "method": "formatLatLngValue",
   "input": "",
   "output": ""
 }
