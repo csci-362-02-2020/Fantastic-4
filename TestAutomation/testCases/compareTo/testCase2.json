@@ -5,5 +5,5 @@
   "method": "compareTo",
   "driver": "",
   "input": "-5",
-  "output": ""
+  "output": "Error"
 }
