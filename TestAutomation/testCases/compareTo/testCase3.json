@@ -4,6 +4,6 @@
   "component": "../project/PhaseSpaceCoordinate.java",
   "method": "compareTo",
   "driver": "",
-  "input": "",
+  "input": "2000000000",
   "output": ""
 }
