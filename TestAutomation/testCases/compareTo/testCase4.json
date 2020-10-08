@@ -1,6 +1,6 @@
 {
   "id": 4,
-  "requirement": "",
+  "requirement": "Method produces the natural logarithm of n!",
   "component": "../project/PhaseSpaceCoordinate.java",
   "method": "compareTo",
   "driver": "",
