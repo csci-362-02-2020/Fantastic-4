@@ -3,7 +3,7 @@
   "requirement": "",
   "component": "../project/LatLong.java",
   "method": "formatLatLngValue",
-  "driver": "../TestAutomation/testCasesExecutables/formatLatLngValue/testCase1.java",
+  "driver": "../testCasesExecutables/formatLatLngValue/testCase1.java",
   "input": "",
   "output": ""
 }

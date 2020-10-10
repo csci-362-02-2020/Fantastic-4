@@ -3,7 +3,7 @@
   "requirement": "",
   "component": "../project/StochasticSEIRDiseaseModelTest.java",
   "method": "computeNoise",
-  "driver": "../TestAutomation/testCasesExecutables/computeNoise/testCase1.java",
+  "driver": "../testCasesExecutables/computeNoise/testCase1.java",
   "input": "",
   "output": ""
 }
