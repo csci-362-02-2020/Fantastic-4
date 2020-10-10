@@ -1,6 +1,6 @@
 {
   "id": 3,
-  "requirement": "",
+  "requirement": "Method sorts coordinates by their x value",
   "component": "../project/PhaseSpaceCoordinate.java",
   "method": "compareTo",
   "driver": "../testCasesExecutables/compareTo/testCase3.java",
