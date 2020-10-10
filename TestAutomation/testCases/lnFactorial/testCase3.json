@@ -1,9 +1,9 @@
 {
   "id": 3,
-  "requirement": "",
+  "requirement": "Method produces the natural logarithm of n!",
   "component": "../project/BinomialDistributionUtil.java",
   "method": "lnFactorial",
-  "driver": "../TestAutomation/testCasesExecutables/lnFactorial/testCase3.java",
-  "input": "",
-  "output": ""
+  "driver": "../testCasesExecutables/lnFactorial/testCase3.java",
+  "input": "2000000000",
+  "output": "4.083282604664613E10"
 }
