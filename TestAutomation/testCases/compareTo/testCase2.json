@@ -3,7 +3,7 @@
   "requirement": "Method produces the natural logarithm of n!",
   "component": "../project/PhaseSpaceCoordinate.java",
   "method": "compareTo",
-  "driver": "",
+  "driver": "../TestAutomation/testCasesExecutables/compareTo/testCase2.java",
   "input": "-5",
   "output": "Error"
 }
