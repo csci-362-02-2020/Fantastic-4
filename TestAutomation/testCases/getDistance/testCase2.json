@@ -3,7 +3,7 @@
   "requirement": "",
   "component": "../project/PhaseSpaceCoordinate.java",
   "method": "getDistance",
-  "driver": "",
+  "driver": "../TestAutomation/testCasesExecutables/getDistance/testCase2.java",
   "input": "",
   "output": ""
 }
