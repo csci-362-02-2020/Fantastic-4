@@ -1,9 +1,9 @@
 {
   "id": 3,
-  "requirement": "Method produces the natural logarithm of n!",
+  "requirement": "",
   "component": "../project/PhaseSpaceCoordinate.java",
   "method": "compareTo",
-  "driver": "../TestAutomation/testCasesExecutables/compareTo/testCase3.java",
-  "input": "2000000000",
-  "output": "4.083282604664613E10"
+  "driver": "../testCasesExecutables/compareTo/testCase3.java",
+  "input": "",
+  "output": ""
 }
