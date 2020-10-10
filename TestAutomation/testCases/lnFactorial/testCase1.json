@@ -3,7 +3,7 @@
   "requirement": "",
   "component": "../project/BinomialDistributionUtil.java",
   "method": "lnFactorial",
-  "driver": "",
+  "driver": "../TestAutomation/testCasesExecutables/lnFactorial/testCase1.java",
   "input": "",
   "output": ""
 }
