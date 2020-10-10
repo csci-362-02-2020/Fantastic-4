@@ -6,13 +6,15 @@ public class TestMethod {
         BinomialDistributionUtil BinomialDistributionUtil = new BinomialDistributionUtil();
 
         // Test 1: Normal numerical value in range
-        int testOne = 3;
+        int testOne = Integer.parseInt(args[0]);
+        
         double value = BinomialDistributionUtil.lnFactorial(testOne);
+
         System.out.println("Test one:");
         System.out.println("ln(" + testOne + "!): " + value);
 
         // Print out test result
-        double testOneOracle = 1.791759469228055;
+        double testOneOracle = Double.parseDouble(args[1]);
         if (value == testOneOracle) {
             System.out.println("Expected Result: " + testOneOracle);
             System.out.println("Actual Result: " + value);
