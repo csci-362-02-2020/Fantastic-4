@@ -1,6 +1,6 @@
 {
   "id": 3,
-  "requirement": "",
+  "requirement": "Method returns a double precision random noise variable",
   "component": "../project/StochasticSEIRDiseaseModelTest.java",
   "method": "computeNoise",
   "driver": "../testCasesExecutables/computeNoise/testCase3.java",
