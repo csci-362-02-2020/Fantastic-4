@@ -5,5 +5,5 @@
   "method": "lnFactorial",
   "driver": "../testCasesExecutables/lnFactorial/testCase2.java",
   "input": "-5",
-  "output": "Error"
+  "output": "0"
 }
