@@ -1,0 +1,4 @@
+Test one:
+ln(0!): 0.0
+Oracle: 0.0
+Test one passed!
