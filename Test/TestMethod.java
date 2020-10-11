@@ -11,22 +11,21 @@ public class TestMethod {
         // Run the actual method we are testing
         double value = BinomialDistributionUtil.lnFactorial(testOne);
 
-        // Print test one
+        // Print test number
         System.out.println("Test one:");
         System.out.println("ln(" + testOne + "!): " + value);
 
         // Print out test result
         double testOneOracle = Double.parseDouble(args[1]);
+
         // Test passed
         if (value == testOneOracle) {
-            System.out.println("Expected Result: " + testOneOracle);
-            System.out.println("Actual Result: " + value);
+            System.out.println("Oracle: " + testOneOracle);
             System.out.println("Test one passed!");
         }
         // Test failed
         else if (value != testOneOracle) {
-            System.out.println("Expected Result: " + testOneOracle);
-            System.out.println("Actual Result: " + value);
+            System.out.println("Oracle: " + testOneOracle);
             System.out.println("Test one failed...");
         }
         // Test ERROR
