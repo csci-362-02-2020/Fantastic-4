@@ -73,6 +73,43 @@ def compileAndRunJavaFileAtLocationWithInput(filePath, input):
     # Remove the class file
     os.system("rm " + splitFileName[0] + ".class")
 
+# This function will compile and run a Java file
+    # This assumes that the java file is in a different directory
+    # Input is given to Java File
+    # Output to file at given path
+def compileAndRunJavaFileAtLocationWithInputOutputToFile(filePath, input, outputFilePath):
+
+    # Change the directory to the given path
+    os.chdir(filePath[0:filePath.rindex("/")])
+
+    # Split file path
+    splitFilePath = filePath.split("/")
+
+    # Parse out the name of the file
+    fileName = splitFilePath[len(splitFilePath)-1]
+
+    # Compile the file
+    os.system("javac " + fileName)
+
+    # Split the file name
+    splitFileName = fileName.split(".")
+
+    # Contsrtuct the command
+    command = "java " + splitFileName[0] + " "
+
+    # Append the input items to the command
+    for item in input:
+        command += item + " "
+
+    # Add the output file to the command
+    command += "> " + outputFilePath
+
+    # Run the compiled file
+    os.system(command)
+
+    # Remove the class file
+    os.system("rm " + splitFileName[0] + ".class")
+
 # File Name
 fileName = "TestMethod.java"
 
@@ -82,5 +119,8 @@ filePath = "../Test/TestMethod.java"
 # Input
 input = ["3", "1.791759469228055"]
 
+# Out file
+outputFilePath = "../TestAutomation/oracles/lnFactorial/testCase1Oracle.txt"
+
 # Call the function
-compileAndRunJavaFileAtLocationWithInput(filePath, input)
+compileAndRunJavaFileAtLocationWithInputOutputToFile(filePath, input, outputFilePath)
