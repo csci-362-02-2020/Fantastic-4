@@ -114,13 +114,13 @@ def compileAndRunJavaFileAtLocationWithInputOutputToFile(filePath, input, output
 fileName = "TestMethod.java"
 
 # File Path
-filePath = "../Test/TestMethod.java"
+filePath = "../TestAutomation/testCasesExecutables/lnFactorial/testCase1.java"
 
 # Input
 input = ["3", "1.791759469228055"]
 
 # Out file
-outputFilePath = "../TestAutomation/oracles/lnFactorial/testCase1Oracle.txt"
+outputFilePath = "../../oracles/lnFactorial/testCase1Oracle.txt"
 
 # Call the function
 compileAndRunJavaFileAtLocationWithInputOutputToFile(filePath, input, outputFilePath)
