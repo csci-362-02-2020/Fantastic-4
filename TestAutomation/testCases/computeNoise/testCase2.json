@@ -4,6 +4,7 @@
   "component": "../project/StochasticSEIRDiseaseModelTest.java",
   "method": "computeNoise",
   "driver": "../testCasesExecutables/computeNoise/testCase2.java",
+  "result": "../results/computeNoise/testCase2Results.txt",
   "input": "",
   "output": ""
 }

@@ -4,6 +4,7 @@
   "component": "../project/BinomialDistributionUtil.java",
   "method": "lnFactorial",
   "driver": "../testCasesExecutables/lnFactorial/testCase2.java",
+  "result": "../results/lnFactorial/testCase2Results.txt",
   "input": "-5",
   "output": "0"
 }
