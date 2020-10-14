@@ -5,6 +5,51 @@ import json
 ####################################################################################################
 ####################################################################################################
 
+# CLEAN UP TEST CASE EXECUTABLES FOLDER
+
+# Input: JSON file of test case
+# Output: NONE (clean folder)
+
+def cleanUpTestCaseExe(testCaseJSON):
+
+    # Get the path to the component
+    componentPath = testCaseJSON["component"]
+
+    # Get the driver path and the driver folder
+    driverPath = testCaseJSON["driver"]
+    driverFolder = driverPath[0:driverPath.rindex("/")]
+
+####################################################################################################
+
+    # Compile project file
+    splitcomponentPath = componentPath.split("/")
+    nameOfProjectJavaFile = splitcomponentPath[len(splitcomponentPath)-1]
+    newProjectLocation = driverFolder + "/" + nameOfProjectJavaFile
+
+    # Change the directory to the given path
+    os.chdir(driverFolder)
+
+    # Split file path
+    splitFilePath = newProjectLocation.split("/")
+
+    # Parse out the name of the file
+    fileName = splitFilePath[len(splitFilePath)-1]
+
+    # Split the file name
+    splitFileName = fileName.split(".")
+
+    # Remove all files with that name, regardless of extension
+    os.system("rm " + splitFileName[0] + ".*")
+
+    # Change the directory back to the way it was...
+    os.chdir("../../scripts")
+
+    os.system("pwd")
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
+
 # MOVE PROJECT FILE and COMPILE FILE
 
 # This method will move the project file in the correct directory and compile the file
@@ -193,6 +238,9 @@ def runTestCase(testCaseJSON):
 # MAIN
 
 def main():
+
+####################################################################################################
+
     # lnFactorial() Method
     lnFactorialTestOne = readJsonAtLocation("../testCases/lnFactorial/testCase1.json")
     lnFactorialTestTwo = readJsonAtLocation("../testCases/lnFactorial/testCase2.json")
@@ -213,6 +261,13 @@ def main():
     runTestCase(lnFactorialTestFour)
     # Test case 5
     runTestCase(lnFactorialTestFive)
+
+    # You only run this once per method...
+    cleanUpTestCaseExe(lnFactorialTestOne)
+
+####################################################################################################
+
+
 
 ####################################################################################################
 ####################################################################################################
