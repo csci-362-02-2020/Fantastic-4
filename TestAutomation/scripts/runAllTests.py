@@ -184,7 +184,7 @@ def runTestCase(testCaseJSON):
 # MAIN
 
 def main():
-    # lnFactorial Method
+    # lnFactorial() Method
     lnFactorialTestOne = readJsonAtLocation("../testCases/lnFactorial/testCase1.json")
     lnFactorialTestTwo = readJsonAtLocation("../testCases/lnFactorial/testCase2.json")
     lnFactorialTestThree = readJsonAtLocation("../testCases/lnFactorial/testCase3.json")
