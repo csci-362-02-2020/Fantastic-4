@@ -5,6 +5,29 @@ import json
 ####################################################################################################
 ####################################################################################################
 
+def moveProjectFileandCompile(testCaseJSON):
+    # Get the path to the component
+    componentPath = testCaseJSON["component"]
+
+    # Get the driver path and the driver folder
+    driverPath = testCaseJSON["driver"]
+    driverFolder = driverPath[0:driverPath.rindex("/")]
+
+    # Copy the Java project to the Test Case Executables folder
+    copyFromProjectToTestCaseExe(componentPath, driverFolder)
+
+####################################################################################################
+
+    # Compile project file
+    splitcomponentPath = componentPath.split("/")
+    nameOfProjectJavaFile = splitcomponentPath[len(splitcomponentPath)-1]
+    newProjectLocation = driverFolder + "/" + nameOfProjectJavaFile
+    compileJavaFileAtLocation(newProjectLocation)
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
+
 # COMPILE and RUN JAVA FILE PRINT RESULTS to FILE
 
 # This method will compile and run a java file with command line arguments and print the ouput to a file
@@ -143,26 +166,9 @@ def copyFromProjectToTestCaseExe(pathFrom, pathTo):
 # Input: file path to test case
 # Ouput: result of test printed to file
 def runTestCase(testCaseJSON):
-    
-    # Get the path to the component
-    componentPath = testCaseJSON["component"]
 
-    # Get the driver path and the driver folder
+    # Get the path to the driver
     driverPath = testCaseJSON["driver"]
-    driverFolder = driverPath[0:driverPath.rindex("/")]
-
-    # Copy the Java project to the Test Case Executables folder
-    copyFromProjectToTestCaseExe(componentPath, driverFolder)
-
-####################################################################################################
-
-    # Compile project file
-    splitcomponentPath = componentPath.split("/")
-    nameOfProjectJavaFile = splitcomponentPath[len(splitcomponentPath)-1]
-    newProjectLocation = driverFolder + "/" + nameOfProjectJavaFile
-    compileJavaFileAtLocation(newProjectLocation)
-
-####################################################################################################
 
     # Run the test case and print the results to a file
     input = testCaseJSON["input"]
@@ -179,10 +185,25 @@ def runTestCase(testCaseJSON):
 
 def main():
     # lnFactorial Method
+    lnFactorialTestOne = readJsonAtLocation("../testCases/lnFactorial/testCase1.json")
+    lnFactorialTestTwo = readJsonAtLocation("../testCases/lnFactorial/testCase2.json")
+    lnFactorialTestThree = readJsonAtLocation("../testCases/lnFactorial/testCase3.json")
+    lnFactorialTestFour = readJsonAtLocation("../testCases/lnFactorial/testCase4.json")
+    lnFactorialTestFive = readJsonAtLocation("../testCases/lnFactorial/testCase5.json")
+
+    # You only run this once per method...
+    moveProjectFileandCompile(lnFactorialTestOne)
 
     # Test case 1
-    lnFactorialTestOne = readJsonAtLocation("../testCases/lnFactorial/testCase1.json")
     runTestCase(lnFactorialTestOne)
+    # Test case 2
+    runTestCase(lnFactorialTestTwo)
+    # Test case 3
+    runTestCase(lnFactorialTestThree)
+    # Test case 4
+    runTestCase(lnFactorialTestFour)
+    # Test case 5
+    runTestCase(lnFactorialTestFive)
 
 ####################################################################################################
 ####################################################################################################
