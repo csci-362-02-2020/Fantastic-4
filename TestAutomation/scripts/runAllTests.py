@@ -5,6 +5,30 @@ import json
 ####################################################################################################
 ####################################################################################################
 
+# CLEAN OUT TEMP FOLDER
+
+# This method will clean out the TEMP folder
+
+# Input: Test JSON file
+# Output: NONE (clean TEMP folder)
+
+def cleanOutTempFoder(testCaseJSON):
+    tempFolderFullPath = testCaseJSON["result"]
+    tempFolder = tempFolderFullPath[0:tempFolderFullPath.rindex("/")]
+    
+    # Go to the directory
+    os.chdir(tempFolder)
+
+    # Remove everything from the temp folder
+    os.system("rm *")
+
+    # Change the directory back to the way it was...
+    os.chdir("../../scripts")
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
+
 # CLEAN UP TEST CASE EXECUTABLES FOLDER
 
 # Input: JSON file of test case
@@ -248,6 +272,9 @@ def main():
 
     # You only run this once per method...
     moveProjectFileandCompile(lnFactorialTestOne)
+
+    # You only run this once per method...
+    cleanOutTempFoder(lnFactorialTestOne)
 
     # Test case 1
     runTestCase(lnFactorialTestOne)
