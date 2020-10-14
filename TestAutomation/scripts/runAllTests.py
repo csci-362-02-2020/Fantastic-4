@@ -5,6 +5,34 @@ import json
 ####################################################################################################
 ####################################################################################################
 
+# COMPILE JAVA FILE at LOCATION
+
+# This method will compile a java file at a particular location
+
+# Input: filePath of Java File
+# Output: None
+
+def compileJavaFileAtLocation(filePath):
+
+    # Change the directory to the given path
+    os.chdir(filePath[0:filePath.rindex("/")])
+
+    # Split file path
+    splitFilePath = filePath.split("/")
+
+    # Parse out the name of the file
+    fileName = splitFilePath[len(splitFilePath)-1]
+
+    # Compile the Java file
+    os.system("javac " + fileName)
+
+    # Change the directory back to the way it was...
+    os.chdir("../../scripts")
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
+
 # READ JSON FILE
 
 # This method will read a JSON file and return a JSON object
@@ -56,6 +84,9 @@ def copyFromProjectToTestCaseExe(pathFrom, pathTo):
     os.system("cat " + splitFilePath[len(splitFilePath)-1] + " > " + "temp.txt")
     os.system("tail -n +3 temp.txt > " + splitFilePath[len(splitFilePath)-1])
     os.system("rm temp.txt")
+    
+    # Change the directory back to the way it was...
+    os.chdir("../../scripts")
 
 ####################################################################################################
 ####################################################################################################
@@ -79,6 +110,15 @@ def runTestCase(testCaseJSON):
     # Copy the Java project to the Test Case Executables folder
     copyFromProjectToTestCaseExe(componentPath, driverFolder)
 
+####################################################################################################
+
+    # Compile project file
+    splitcomponentPath = componentPath.split("/")
+    nameOfProjectJavaFile = splitcomponentPath[len(splitcomponentPath)-1]
+    newProjectLocation = driverFolder + "/" + nameOfProjectJavaFile
+    compileJavaFileAtLocation(newProjectLocation)
+
+    os.system("pwd")
 
 ####################################################################################################
 ####################################################################################################
@@ -90,7 +130,7 @@ def main():
     # lnFactorial Method
 
     # Test case 1
-    lnFactorialTestOne = readJsonAtLocation("../testCases/computeNoise/testCase1.json")
+    lnFactorialTestOne = readJsonAtLocation("../testCases/compareTo/testCase1.json")
     runTestCase(lnFactorialTestOne)
 
 ####################################################################################################
