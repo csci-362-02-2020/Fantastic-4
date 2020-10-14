@@ -5,6 +5,50 @@ import json
 ####################################################################################################
 ####################################################################################################
 
+# COMPILE and RUN JAVA FILE PRINT RESULTS to FILE
+
+# This method will compile and run a java file with command line arguments and print the ouput to a file
+
+def compileAndRunJavaFileAtLocationWithInputOutputToFile(filePath, input, outputFilePath):
+
+    # Change the directory to the given path
+    os.chdir(filePath[0:filePath.rindex("/")])
+
+    # Split file path
+    splitFilePath = filePath.split("/")
+
+    # Parse out the name of the file
+    fileName = splitFilePath[len(splitFilePath)-1]
+
+    # Compile the file
+    os.system("javac " + fileName)
+
+    # Split the file name
+    splitFileName = fileName.split(".")
+
+    # Contsrtuct the command
+    command = "java " + splitFileName[0] + " "
+
+    # Append the input items to the command
+    for item in input:
+        command += item + " "
+
+    # Add the output file to the command
+    command += "> " + "../" + outputFilePath
+
+    # Run the compiled file
+    os.system(command)
+
+    # Remove the class file
+    os.system("rm " + splitFileName[0] + ".class")
+
+    # Change the directory back to the way it was...
+    os.chdir("../../scripts")
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
+
 # COMPILE JAVA FILE at LOCATION
 
 # This method will compile a java file at a particular location
@@ -118,7 +162,14 @@ def runTestCase(testCaseJSON):
     newProjectLocation = driverFolder + "/" + nameOfProjectJavaFile
     compileJavaFileAtLocation(newProjectLocation)
 
-    os.system("pwd")
+####################################################################################################
+
+    # Run the test case and print the results to a file
+    input = testCaseJSON["input"]
+    output = testCaseJSON["output"]
+    inputArray = [input, output]
+    outFilePath = testCaseJSON["result"]
+    compileAndRunJavaFileAtLocationWithInputOutputToFile(driverPath, inputArray, outFilePath)
 
 ####################################################################################################
 ####################################################################################################
@@ -130,7 +181,7 @@ def main():
     # lnFactorial Method
 
     # Test case 1
-    lnFactorialTestOne = readJsonAtLocation("../testCases/compareTo/testCase1.json")
+    lnFactorialTestOne = readJsonAtLocation("../testCases/lnFactorial/testCase1.json")
     runTestCase(lnFactorialTestOne)
 
 ####################################################################################################
