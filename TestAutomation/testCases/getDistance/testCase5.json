@@ -4,7 +4,7 @@
   "component": "../project/PhaseSpaceCoordinate.java",
   "method": "getDistance",
   "driver": "../testCasesExecutables/getDistance/testCase5.java",
-  "result": "../results/getDistance/testCase5Results.txt",
+  "result": "../temp/getDistance/testCase5results.txt",
   "input": "",
   "output": ""
 }
