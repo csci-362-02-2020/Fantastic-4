@@ -36,7 +36,7 @@ def readJsonAtLocation(filePath):
 ####################################################################################################
 ####################################################################################################
 
-# COPY FILE and DELETE FIRST LINE
+# COPY FILE and DELETE FIRST TWO LINES
 
 # Input: pathFrom, pathTo
 def copyFromProjectToTestCaseExe(pathFrom, pathTo):
