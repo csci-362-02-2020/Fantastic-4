@@ -5,6 +5,12 @@ import json
 ####################################################################################################
 ####################################################################################################
 
+# MOVE PROJECT FILE and COMPILE FILE
+
+# This method will move the project file in the correct directory and compile the file
+# Input: testCaseJSON
+# Output: NONE
+
 def moveProjectFileandCompile(testCaseJSON):
     # Get the path to the component
     componentPath = testCaseJSON["component"]
@@ -31,6 +37,9 @@ def moveProjectFileandCompile(testCaseJSON):
 # COMPILE and RUN JAVA FILE PRINT RESULTS to FILE
 
 # This method will compile and run a java file with command line arguments and print the ouput to a file
+
+# Input: filePath, input, outputFilePath
+# Output: results printed to file
 
 def compileAndRunJavaFileAtLocationWithInputOutputToFile(filePath, input, outputFilePath):
 
@@ -77,7 +86,7 @@ def compileAndRunJavaFileAtLocationWithInputOutputToFile(filePath, input, output
 # This method will compile a java file at a particular location
 
 # Input: filePath of Java File
-# Output: None
+# Output: NONE
 
 def compileJavaFileAtLocation(filePath):
 
