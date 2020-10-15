@@ -5,6 +5,6 @@
   "method": "getDistance",
   "driver": "../testCasesExecutables/getDistance/testCase3.java",
   "result": "../temp/getDistance/testCase3results.txt",
-  "input": "",
-  "output": ""
+  "input": "-52 -3 -23 -45",
+  "output": "51.039201"
 }

@@ -5,6 +5,6 @@
   "method": "getDistance",
   "driver": "../testCasesExecutables/getDistance/testCase5.java",
   "result": "../temp/getDistance/testCase5results.txt",
-  "input": "",
-  "output": ""
+  "input": "120983 12349078 487094 430803248",
+  "output": "418454330.15761"
 }
