@@ -5,27 +5,27 @@ public class testCase2 {
         // Instantiate the Binomial Distribution Utility class
         BinomialDistributionUtil BinomialDistributionUtil = new BinomialDistributionUtil();
 
-        // Test 1: Normal numerical value in range
-        int testOne = Integer.parseInt(args[0]);
+        // Test 2: Normal numerical value in range
+        int testTwo = Integer.parseInt(args[0]);
         
         // Run the actual method we are testing
-        double value = BinomialDistributionUtil.lnFactorial(testOne);
+        double value = BinomialDistributionUtil.lnFactorial(testTwo);
 
         // Print test number
         System.out.println("Test two:");
-        System.out.println("ln(" + testOne + "!): " + value);
+        System.out.println("ln(" + testTwo + "!): " + value);
 
         // Print out test result
-        double testOneOracle = Double.parseDouble(args[1]);
+        double testOracle = Double.parseDouble(args[1]);
 
         // Test passed
-        if (value == testOneOracle) {
-            System.out.println("Oracle: " + testOneOracle);
+        if (value == testOracle) {
+            System.out.println("Oracle: " + testOracle);
             System.out.println("Test one passed!");
         }
         // Test failed
-        else if (value != testOneOracle) {
-            System.out.println("Oracle: " + testOneOracle);
+        else if (value != testOracle) {
+            System.out.println("Oracle: " + testOracle);
             System.out.println("Test one failed...");
         }
         // Test ERROR
