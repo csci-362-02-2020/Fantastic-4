@@ -1,4 +1,4 @@
-Test two:
+Test Two:
 ln(-5!): 0.0
 Oracle: 0.0
-Test one passed!
+Test two passed!

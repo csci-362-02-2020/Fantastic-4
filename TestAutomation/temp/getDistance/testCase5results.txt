@@ -2,4 +2,4 @@ Test Five:
 Caculate distance bettween (120983.000000,12349078.000000) and (487094.000000,430803248.000000)
 Result: 4.18454330157609E8
 Oracle: 4.18454330157609E8
-Test one passed!
+Test five passed!

@@ -25,16 +25,16 @@ public class testCase5 {
         // Test passed
         if (distance == testOracle) {
             System.out.println("Oracle: " + testOracle);
-            System.out.println("Test one passed!");
+            System.out.println("Test five passed!");
         }
         // Test failed
         else if (distance != testOracle) {
             System.out.println("Oracle: " + testOracle);
-            System.out.println("Test one failed...");
+            System.out.println("Test five failed...");
         }
         // Test ERROR
         else {
-            System.out.println("Test one ERROR");
+            System.out.println("Test five ERROR");
         }
 
     }
