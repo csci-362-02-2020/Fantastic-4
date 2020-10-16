@@ -16,16 +16,16 @@ public class TestMethod {
         System.out.println("ln(" + testOne + "!): " + value);
 
         // Print out test result
-        double testOneOracle = Double.parseDouble(args[1]);
+        double testOracle = Double.parseDouble(args[1]);
 
         // Test passed
-        if (value == testOneOracle) {
-            System.out.println("Oracle: " + testOneOracle);
+        if (value == testOracle) {
+            System.out.println("Oracle: " + testOracle);
             System.out.println("Test one passed!");
         }
         // Test failed
-        else if (value != testOneOracle) {
-            System.out.println("Oracle: " + testOneOracle);
+        else if (value != testOracle) {
+            System.out.println("Oracle: " + testOracle);
             System.out.println("Test one failed...");
         }
         // Test ERROR
