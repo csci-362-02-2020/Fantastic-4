@@ -1,0 +1,5 @@
+Test Four:
+Caculate distance bettween (0.000000,0.000000) and (0.000000,0.000000)
+Result: 0.0
+Oracle: 0.0
+Test one passed!

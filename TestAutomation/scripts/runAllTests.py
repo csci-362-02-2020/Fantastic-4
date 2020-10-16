@@ -260,8 +260,8 @@ def runTestCase(testCaseJSON):
 # MAIN
 
 def main():
-
-####################################################################################################
+    
+# TEST
 
     # lnFactorial() Method
     lnFactorialTestOne = readJsonAtLocation("../testCases/lnFactorial/testCase1.json")
@@ -291,6 +291,39 @@ def main():
     cleanUpTestCaseExe(lnFactorialTestOne)
 
 ####################################################################################################
+####################################################################################################
+# TEST
+
+    # getDistance() Method
+    getDistanceTestOne = readJsonAtLocation("../testCases/getDistance/testCase1.json")
+    getDistanceTestTwo = readJsonAtLocation("../testCases/getDistance/testCase2.json")
+    getDistanceTestThree = readJsonAtLocation("../testCases/getDistance/testCase3.json")
+    getDistanceTestFour = readJsonAtLocation("../testCases/getDistance/testCase4.json")
+    getDistanceTestFive = readJsonAtLocation("../testCases/getDistance/testCase5.json")
+
+    # You only run this once per method...
+    moveProjectFileandCompile(getDistanceTestOne)
+
+    # You only run this once per method...
+    cleanOutTempFoder(getDistanceTestOne)
+
+    # Test case 1
+    runTestCase(getDistanceTestOne)
+    # Test case 2
+    runTestCase(getDistanceTestTwo)
+    # Test case 3
+    runTestCase(getDistanceTestThree)
+    # Test case 4
+    runTestCase(getDistanceTestFour)
+    # Test case 5
+    runTestCase(getDistanceTestFive)
+
+    # You only run this once per method...
+    cleanUpTestCaseExe(getDistanceTestOne)
+
+####################################################################################################
+####################################################################################################
+
 
 
 

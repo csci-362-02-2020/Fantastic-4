@@ -6,5 +6,5 @@
   "driver": "../testCasesExecutables/getDistance/testCase5.java",
   "result": "../temp/getDistance/testCase5results.txt",
   "input": "120983 12349078 487094 430803248",
-  "output": "418454330.15761"
+  "output": "4.18454330157609E8"
 }
