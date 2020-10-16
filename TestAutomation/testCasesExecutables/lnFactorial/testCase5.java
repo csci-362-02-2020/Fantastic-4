@@ -12,7 +12,7 @@ public class testCase5 {
         double value = BinomialDistributionUtil.lnFactorial(testFive);
 
         // Print test number
-        System.out.println("Test five:");
+        System.out.println("Test Five:");
         System.out.println("ln(" + testFive + "!): " + value);
 
         // Print out test result
