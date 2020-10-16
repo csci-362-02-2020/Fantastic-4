@@ -5,6 +5,38 @@ import json
 ####################################################################################################
 ####################################################################################################
 
+def testMethod(methodName):
+    pathToJSON = "../testCases/" + methodName + "/"
+    testOne = readJsonAtLocation(pathToJSON + "testCase1.json")
+    testTwo = readJsonAtLocation(pathToJSON + "testCase2.json")
+    testThree = readJsonAtLocation(pathToJSON + "testCase3.json")
+    testFour = readJsonAtLocation(pathToJSON + "testCase4.json")
+    testFive = readJsonAtLocation(pathToJSON + "testCase5.json")
+
+    # You only run this once per method...
+    moveProjectFileandCompile(testOne)
+
+    # You only run this once per method...
+    cleanOutTempFoder(testOne)
+
+    # Test case 1
+    runTestCase(testOne)
+    # Test case 2
+    runTestCase(testTwo)
+    # Test case 3
+    runTestCase(testThree)
+    # Test case 4
+    runTestCase(testFour)
+    # Test case 5
+    runTestCase(testFive)
+
+    # You only run this once per method...
+    cleanUpTestCaseExe(testOne)
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
+
 # CLEAN OUT TEMP FOLDER
 
 # This method will clean out the TEMP folder
@@ -260,70 +292,18 @@ def runTestCase(testCaseJSON):
 # MAIN
 
 def main():
-    
-# TEST
-
-    # lnFactorial() Method
-    lnFactorialTestOne = readJsonAtLocation("../testCases/lnFactorial/testCase1.json")
-    lnFactorialTestTwo = readJsonAtLocation("../testCases/lnFactorial/testCase2.json")
-    lnFactorialTestThree = readJsonAtLocation("../testCases/lnFactorial/testCase3.json")
-    lnFactorialTestFour = readJsonAtLocation("../testCases/lnFactorial/testCase4.json")
-    lnFactorialTestFive = readJsonAtLocation("../testCases/lnFactorial/testCase5.json")
-
-    # You only run this once per method...
-    moveProjectFileandCompile(lnFactorialTestOne)
-
-    # You only run this once per method...
-    cleanOutTempFoder(lnFactorialTestOne)
-
-    # Test case 1
-    runTestCase(lnFactorialTestOne)
-    # Test case 2
-    runTestCase(lnFactorialTestTwo)
-    # Test case 3
-    runTestCase(lnFactorialTestThree)
-    # Test case 4
-    runTestCase(lnFactorialTestFour)
-    # Test case 5
-    runTestCase(lnFactorialTestFive)
-
-    # You only run this once per method...
-    cleanUpTestCaseExe(lnFactorialTestOne)
 
 ####################################################################################################
-####################################################################################################
-# TEST
 
-    # getDistance() Method
-    getDistanceTestOne = readJsonAtLocation("../testCases/getDistance/testCase1.json")
-    getDistanceTestTwo = readJsonAtLocation("../testCases/getDistance/testCase2.json")
-    getDistanceTestThree = readJsonAtLocation("../testCases/getDistance/testCase3.json")
-    getDistanceTestFour = readJsonAtLocation("../testCases/getDistance/testCase4.json")
-    getDistanceTestFive = readJsonAtLocation("../testCases/getDistance/testCase5.json")
-
-    # You only run this once per method...
-    moveProjectFileandCompile(getDistanceTestOne)
-
-    # You only run this once per method...
-    cleanOutTempFoder(getDistanceTestOne)
-
-    # Test case 1
-    runTestCase(getDistanceTestOne)
-    # Test case 2
-    runTestCase(getDistanceTestTwo)
-    # Test case 3
-    runTestCase(getDistanceTestThree)
-    # Test case 4
-    runTestCase(getDistanceTestFour)
-    # Test case 5
-    runTestCase(getDistanceTestFive)
-
-    # You only run this once per method...
-    cleanUpTestCaseExe(getDistanceTestOne)
+# TEST lnFactorial method
+    testMethod("lnFactorial")
 
 ####################################################################################################
-####################################################################################################
 
+# TEST getDistance method
+    testMethod("getDistance")
+
+####################################################################################################
 
 
 
