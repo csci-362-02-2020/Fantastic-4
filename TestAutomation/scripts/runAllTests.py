@@ -19,15 +19,22 @@ def testMethod(methodName):
     # You only run this once per method...
     cleanOutTempFoder(testOne)
 
+    print("Testing " + methodName + ":")
+
     # Test case 1
+    print("Running test 1")
     runTestCase(testOne)
     # Test case 2
+    print("Running test 2")
     runTestCase(testTwo)
     # Test case 3
+    print("Running test 3")
     runTestCase(testThree)
     # Test case 4
+    print("Running test 4")
     runTestCase(testFour)
     # Test case 5
+    print("Running test 5\n")
     runTestCase(testFive)
 
     # You only run this once per method...
