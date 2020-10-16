@@ -5,6 +5,63 @@ import json
 ####################################################################################################
 ####################################################################################################
 
+def writeMethodResults(methodName, reportFile):
+    # Construct the report for the first method
+    resultsFilePath = "../temp/" + methodName + "/"
+
+    reportFile.write("<h3 style=\"color:blue;\">" + methodName + "()</h3>\n")
+
+    writeTestResults(resultsFilePath + "testCase1results.txt", reportFile, "one")
+    writeTestResults(resultsFilePath + "testCase2results.txt", reportFile, "two")
+    writeTestResults(resultsFilePath + "testCase3results.txt", reportFile, "three")
+    writeTestResults(resultsFilePath + "testCase4results.txt", reportFile, "four")
+    writeTestResults(resultsFilePath + "testCase5results.txt", reportFile, "five")
+
+    reportFile.write("<hr>\n\n")
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
+
+def writeTestResults(filePath, reportFile, testNum):
+    resultsFile= open(filePath)
+
+    i = 0
+
+    for line in resultsFile:
+        if (i == 0):
+            reportFile.write("<h4>" + line.strip() + "</h4>\n")
+        elif ("passed" in line):
+            reportFile.write("<p>Test " + testNum + "<i style=\"color:green;\"> passed</i>!</p>\n")
+        elif ("failed" in line):
+            reportFile.write("<p>Test " + testNum + "<i style=\"color:red;\"> failed</i>!</p>\n")
+        else:
+            reportFile.write("<p>" + line.strip() + "</p>\n")
+
+        i += 1
+
+    reportFile.write("\n\n\n")
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
+
+def constructReport(methodNames):
+    print("Constructing final report")
+
+    reportFile = open("../reports/testReport.html", "w")
+
+    # Write the first line
+    reportFile.write("<h1>Test Results</h1>\n\n")
+    reportFile.write("<hr>\n\n")
+    
+    for method in methodNames:
+        writeMethodResults(method, reportFile)
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
+
 def testMethod(methodName):
     pathToJSON = "../testCases/" + methodName + "/"
     testOne = readJsonAtLocation(pathToJSON + "testCase1.json")
@@ -302,17 +359,14 @@ def main():
 
 ####################################################################################################
 
-# TEST lnFactorial method
-    testMethod("lnFactorial")
+    methodNames = ["lnFactorial", "getDistance"]
+
+    for method in methodNames:
+        testMethod(method)
 
 ####################################################################################################
 
-# TEST getDistance method
-    testMethod("getDistance")
-
-####################################################################################################
-
-
+    constructReport(methodNames)
 
 ####################################################################################################
 ####################################################################################################
