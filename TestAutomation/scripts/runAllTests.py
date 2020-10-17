@@ -1,21 +1,25 @@
 import os
 import json
+import webbrowser
+
+# Open the report file
+reportFile = open("../reports/testReport.html", "w")
 
 ####################################################################################################
 ####################################################################################################
 ####################################################################################################
 
-def writeMethodResults(methodName, reportFile):
+def writeMethodResults(methodName):
     # Construct the report for the first method
     resultsFilePath = "../temp/" + methodName + "/"
 
     reportFile.write("<h3 style=\"color:blue;\">" + methodName + "()</h3>\n")
 
-    writeTestResults(resultsFilePath + "testCase1results.txt", reportFile, "one")
-    writeTestResults(resultsFilePath + "testCase2results.txt", reportFile, "two")
-    writeTestResults(resultsFilePath + "testCase3results.txt", reportFile, "three")
-    writeTestResults(resultsFilePath + "testCase4results.txt", reportFile, "four")
-    writeTestResults(resultsFilePath + "testCase5results.txt", reportFile, "five")
+    writeTestResults(resultsFilePath + "testCase1results.txt", "one")
+    writeTestResults(resultsFilePath + "testCase2results.txt", "two")
+    writeTestResults(resultsFilePath + "testCase3results.txt", "three")
+    writeTestResults(resultsFilePath + "testCase4results.txt", "four")
+    writeTestResults(resultsFilePath + "testCase5results.txt", "five")
 
     reportFile.write("<hr>\n\n")
 
@@ -23,7 +27,7 @@ def writeMethodResults(methodName, reportFile):
 ####################################################################################################
 ####################################################################################################
 
-def writeTestResults(filePath, reportFile, testNum):
+def writeTestResults(filePath, testNum):
     resultsFile= open(filePath)
 
     i = 0
@@ -49,14 +53,12 @@ def writeTestResults(filePath, reportFile, testNum):
 def constructReport(methodNames):
     print("Constructing final report")
 
-    reportFile = open("../reports/testReport.html", "w")
-
     # Write the first line
     reportFile.write("<h1>Test Results</h1>\n\n")
     reportFile.write("<hr>\n\n")
     
     for method in methodNames:
-        writeMethodResults(method, reportFile)
+        writeMethodResults(method)
 
 ####################################################################################################
 ####################################################################################################
@@ -359,14 +361,21 @@ def main():
 
 ####################################################################################################
 
-    methodNames = ["lnFactorial", "getDistance"]
+    # Test each method
+    methodNames = ["lnFactorial", "getDistance", "compareTo"]
 
     for method in methodNames:
         testMethod(method)
 
 ####################################################################################################
 
+    # Construct the HTML file and open it in the browser
     constructReport(methodNames)
+
+    # Open the html file in the browser
+    new = 2 # open in a new tab, if possible
+    print("Opening the html file")
+    webbrowser.open("../reports/testReport.html", new=new)
 
 ####################################################################################################
 ####################################################################################################

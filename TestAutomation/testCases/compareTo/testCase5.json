@@ -5,6 +5,6 @@
   "method": "compareTo",
   "driver": "../testCasesExecutables/compareTo/testCase5.java",
   "result": "../temp/compareTo/testCase5results.txt",
-  "input": "",
-  "output": ""
+  "input": "92 92 92 92",
+  "output": "0"
 }

@@ -1,0 +1,5 @@
+Test Three:
+Compare Points (136.000000,-38.000000) and (17.000000,-32.000000)
+Result: 1.0
+Oracle: 1.0
+Test three passed!

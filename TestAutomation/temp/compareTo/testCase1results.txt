@@ -1,0 +1,5 @@
+Test One:
+Compare Points (5.000000,-63.000000) and (72.000000,38.000000)
+Result: -1.0
+Oracle: -1.0
+Test one passed!
