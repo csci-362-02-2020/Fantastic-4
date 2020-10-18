@@ -5,6 +5,6 @@
   "method": "formatLatLngValue",
   "driver": "../testCasesExecutables/formatLatLngValue/testCase5.java",
   "result": "../temp/formatLatLngValue/testCase5results.txt",
-  "input": "",
-  "output": ""
+  "input": "9120370981409.12309714287894513 8",
+  "output": "9.223372036854776E10"
 }

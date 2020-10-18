@@ -5,6 +5,6 @@
   "method": "formatLatLngValue",
   "driver": "../testCasesExecutables/formatLatLngValue/testCase2.java",
   "result": "../temp/formatLatLngValue/testCase2results.txt",
-  "input": "",
-  "output": ""
+  "input": "0.128427 4",
+  "output": "0.1284"
 }
