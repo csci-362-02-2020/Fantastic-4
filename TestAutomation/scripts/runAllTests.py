@@ -362,7 +362,7 @@ def main():
 ####################################################################################################
 
     # Test each method
-    methodNames = ["lnFactorial", "getDistance", "compareTo", "formatLatLngValue"]
+    methodNames = ["lnFactorial", "getDistance", "compareTo", "formatLatLngValue", "calculateSlope"]
 
     for method in methodNames:
         testMethod(method)
