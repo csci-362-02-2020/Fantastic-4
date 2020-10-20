@@ -1,5 +1,5 @@
 README
-Steps taken to run our project...
+Steps taken to run all tests...
 
 Steps:
 1. Install Oracle VM VirtualBox.
