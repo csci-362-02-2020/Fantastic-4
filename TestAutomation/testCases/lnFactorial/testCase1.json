@@ -3,7 +3,7 @@
   "requirement": "Method computes the log(n!)",
   "component": "../project/BinomialDistributionUtil.java",
   "method": "lnFactorial",
-  "driver": "../testCasesExecutables/lnFactorial/testCase1.java",
+  "driver": "../testCasesExecutables/lnFactorial/testCase.java",
   "result": "../temp/lnFactorial/testCase1results.txt",
   "input": "0",
   "output": "0"

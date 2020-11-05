@@ -1,19 +1,19 @@
 
-public class testCase2 {
+public class testCase {
     public static void main(String[] args) {
 
         // Instantiate the Binomial Distribution Utility class
         BinomialDistributionUtil BinomialDistributionUtil = new BinomialDistributionUtil();
 
-        // Test 2: Normal numerical value in range
-        int testTwo = Integer.parseInt(args[0]);
+        // Test 1: Normal numerical value in range
+        int testOne = Integer.parseInt(args[0]);
         
         // Run the actual method we are testing
-        double value = BinomialDistributionUtil.lnFactorial(testTwo);
+        double value = BinomialDistributionUtil.lnFactorial(testOne);
 
         // Print test number
-        System.out.println("Test Two:");
-        System.out.println("ln(" + testTwo + "!): " + value);
+        System.out.println("Test:");
+        System.out.println("ln(" + testOne + "!): " + value);
 
         // Print out test result
         double testOracle = Double.parseDouble(args[1]);
@@ -21,16 +21,16 @@ public class testCase2 {
         // Test passed
         if (value == testOracle) {
             System.out.println("Oracle: " + testOracle);
-            System.out.println("Test two passed!");
+            System.out.println("Test one passed!");
         }
         // Test failed
         else if (value != testOracle) {
             System.out.println("Oracle: " + testOracle);
-            System.out.println("Test two failed...");
+            System.out.println("Test one failed...");
         }
         // Test ERROR
         else {
-            System.out.println("Test two ERROR");
+            System.out.println("Test one ERROR");
         }
     }
 }

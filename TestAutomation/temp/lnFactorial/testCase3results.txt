@@ -1,4 +1,4 @@
-Test Three:
+Test:
 ln(2000000000!): 4.083282604664613E10
 Oracle: 4.083282604664613E10
-Test three passed!
+Test one passed!

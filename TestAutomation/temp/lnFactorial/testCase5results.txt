@@ -1,4 +1,4 @@
-Test Five:
+Test:
 ln(3!): 1.791759469228055
 Oracle: 1.791759469228055
-Test five passed!
+Test one passed!
