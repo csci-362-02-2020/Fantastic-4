@@ -1,4 +1,4 @@
-Test Two:
+Test:
 Calculate slope bettween (-3.000000, 3.000000) and (3.000000, -3.000000)
 Slope: -1.0
 Oracle: -1.0

@@ -1,7 +1,7 @@
 import java.util.*; 
 import java.util.function.Supplier; 
 
-public class testCase2 {
+public class testCase {
     public static void main(String[] args) {
 
         // Assign values from input
@@ -27,7 +27,7 @@ public class testCase2 {
         double slope = LinearLeastSquaresFitOBJ.calculateSlope(Xlist, Ylist);
 
         // Print test number
-        System.out.println("Test Two:");
+        System.out.println("Test:");
         System.out.printf("Calculate slope bettween (%f, %f) and (%f, %f)\n", x1, y1, x2, y2);
 
         System.out.println("Slope: " + slope);
