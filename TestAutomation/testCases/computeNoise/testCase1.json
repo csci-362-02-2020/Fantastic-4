@@ -3,7 +3,7 @@
   "requirement": "Method returns a double precision random noise variable",
   "component": "../project/StochasticSEIRDiseaseModelTest.java",
   "method": "computeNoise",
-  "driver": "../testCasesExecutables/computeNoise/testCase1.java",
+  "driver": "../testCasesExecutables/computeNoise/testCase.java",
   "result": "../temp/computeNoise/testCase1results.txt",
   "input": "",
   "output": ""

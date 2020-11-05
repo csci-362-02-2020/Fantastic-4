@@ -1,5 +1,5 @@
-Test Two:
+Test:
 Compare Points (0.000000,0.000000) and (1.000000,0.000000)
 Result: -1.0
 Oracle: -1.0
-Test two passed!
+Test one passed!

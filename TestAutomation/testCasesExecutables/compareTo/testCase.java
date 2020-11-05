@@ -1,4 +1,4 @@
-public class testCase3 {
+public class testCase {
     public static void main(String[] args) {
 
         // Get values from input
@@ -17,7 +17,7 @@ public class testCase3 {
         // Get the distance bettween two points
         double distance = pointOne.compareTo(pointTwo);
 
-        System.out.println("Test Three:");
+        System.out.println("Test:");
         System.out.printf("Compare Points (%f,%f) and (%f,%f)\n", pointOneX, pointOneY, pointTwoX, pointTwoY);
 
         System.out.println("Result: " + distance);
@@ -25,16 +25,16 @@ public class testCase3 {
         // Test passed
         if (distance == testOracle) {
             System.out.println("Oracle: " + testOracle);
-            System.out.println("Test three passed!");
+            System.out.println("Test one passed!");
         }
         // Test failed
         else if (distance != testOracle) {
             System.out.println("Oracle: " + testOracle);
-            System.out.println("Test three failed...");
+            System.out.println("Test one failed...");
         }
         // Test ERROR
         else {
-            System.out.println("Test three ERROR");
+            System.out.println("Test one ERROR");
         }
 
     }
