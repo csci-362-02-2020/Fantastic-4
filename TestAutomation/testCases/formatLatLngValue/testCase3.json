@@ -3,7 +3,7 @@
   "requirement": "Method converts double value into a fractional string with default number of decimal places",
   "component": "../project/LatLong.java",
   "method": "formatLatLngValue",
-  "driver": "../testCasesExecutables/formatLatLngValue/testCase3.java",
+  "driver": "../testCasesExecutables/formatLatLngValue/testCase.java",
   "result": "../temp/formatLatLngValue/testCase3results.txt",
   "input": "-126.1253799 0",
   "output": "-126.0"

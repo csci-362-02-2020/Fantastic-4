@@ -1,5 +1,5 @@
 
-public class testCase4 {
+public class testCase {
     public static void main(String[] args) {
 
         // Instantiate the Binomial Distribution Utility class
@@ -16,7 +16,7 @@ public class testCase4 {
         String result = LatLong.formatLatLngValue(input, fractionalDigits);
 
         // Print test number
-        System.out.println("Test Four:");
+        System.out.println("Test:");
         System.out.println("Format " + input);
 
         System.out.println("Result: " + result);
