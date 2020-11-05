@@ -4,7 +4,6 @@
   "component": "../project/LatLong.java",
   "method": "formatLatLngValue",
   "driver": "../testCasesExecutables/formatLatLngValue/testCase.java",
-  "result": "../temp/formatLatLngValue/testCase4results.txt",
   "input": "-54727143.0234885 2",
   "output": "-5.472714302E7"
 }

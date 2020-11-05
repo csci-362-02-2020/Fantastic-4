@@ -111,7 +111,12 @@ def testMethod(methodName):
 # Output: NONE (clean TEMP folder)
 
 def cleanOutTempFoder(testCaseJSON):
-    tempFolderFullPath = testCaseJSON["result"]
+    # Run the test case and print the results to a file
+    methodName = testCaseJSON["method"]
+    id = testCaseJSON["id"]
+    
+    # Build the file path
+    tempFolderFullPath = "../temp/" + methodName + "/testCase" + str(id) + "results.txt"
     tempFolder = tempFolderFullPath[0:tempFolderFullPath.rindex("/")]
     
     # Go to the directory
@@ -347,8 +352,12 @@ def runTestCase(testCaseJSON):
     # Run the test case and print the results to a file
     input = testCaseJSON["input"]
     output = testCaseJSON["output"]
+    methodName = testCaseJSON["method"]
     inputArray = [input, output]
-    outFilePath = testCaseJSON["result"]
+    id = testCaseJSON["id"]
+
+    # Build the output file
+    outFilePath = "../temp/" + methodName + "/testCase" + str(id) + "results.txt"
     compileAndRunJavaFileAtLocationWithInputOutputToFile(driverPath, inputArray, outFilePath)
 
 ####################################################################################################

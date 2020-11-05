@@ -4,7 +4,6 @@
   "component": "../project/LinearLeastSquaresFit.java",
   "method": "calculateSlope",
   "driver": "../testCasesExecutables/calculateSlope/testCase.java",
-  "result": "../temp/calculateSlope/testCase5results.txt",
   "input": "64.2387634 64.5908703477 64.24089753 64.5906543",
   "output": "-0.10123448901101095"
 }

@@ -4,7 +4,6 @@
   "component": "../project/PhaseSpaceCoordinate.java",
   "method": "compareTo",
   "driver": "../testCasesExecutables/compareTo/testCase.java",
-  "result": "../temp/compareTo/testCase2results.txt",
   "input": "0 0 1 0",
   "output": "-1"
 }
