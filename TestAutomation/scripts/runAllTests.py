@@ -361,9 +361,17 @@ def main():
 
 ####################################################################################################
 
-    # Test each method
-    # methodNames = ["lnFactorial", "getDistance", "compareTo", "formatLatLngValue", "calculateSlope"]
-    methodNames = ["lnFactorial"]
+    # Get the method names
+    methodNames = []
+
+    os.system("ls ../testCases > methodNames.txt")
+
+    tempFile = open("methodNames.txt", "r")
+
+    for line in tempFile:
+        methodNames.append(line.strip())
+
+    os.system("rm methodNames.txt")
 
     for method in methodNames:
         testMethod(method)

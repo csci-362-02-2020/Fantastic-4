@@ -1,4 +1,4 @@
-Test One:
+Test:
 Format 1253404.47262174
 Result: 1253404.472
 Oracle: 1253404.472
