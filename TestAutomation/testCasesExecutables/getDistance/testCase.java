@@ -1,4 +1,4 @@
-public class testCase2 {
+public class testCase {
     public static void main(String[] args) {
 
         // Get values from input
@@ -17,7 +17,7 @@ public class testCase2 {
         // Get the distance bettween two points
         double distance = pointOne.getDistance(pointTwo);
 
-        System.out.println("Test Two:");
+        System.out.println("Test:");
         System.out.printf("Caculate distance bettween (%f,%f) and (%f,%f)\n", pointOneX, pointOneY, pointTwoX, pointTwoY);
 
         System.out.println("Result: " + distance);
@@ -25,16 +25,16 @@ public class testCase2 {
         // Test passed
         if (distance == testOracle) {
             System.out.println("Oracle: " + testOracle);
-            System.out.println("Test two passed!");
+            System.out.println("Test one passed!");
         }
         // Test failed
         else if (distance != testOracle) {
             System.out.println("Oracle: " + testOracle);
-            System.out.println("Test two failed...");
+            System.out.println("Test one failed...");
         }
         // Test ERROR
         else {
-            System.out.println("Test two ERROR");
+            System.out.println("Test one ERROR");
         }
 
     }

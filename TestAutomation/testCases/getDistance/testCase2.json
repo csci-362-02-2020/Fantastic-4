@@ -3,7 +3,7 @@
   "requirement": "Method returns the distance between this point and other point in phase space",
   "component": "../project/PhaseSpaceCoordinate.java",
   "method": "getDistance",
-  "driver": "../testCasesExecutables/getDistance/testCase2.java",
+  "driver": "../testCasesExecutables/getDistance/testCase.java",
   "result": "../temp/getDistance/testCase2results.txt",
   "input": "7 3 4 9",
   "output": "6.708203932499369"
