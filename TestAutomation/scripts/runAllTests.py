@@ -10,16 +10,23 @@ reportFile = open("reports/testReport.html", "w")
 ####################################################################################################
 
 def writeMethodResults(methodName):
+    pathToJSON = "testCases/" + methodName + "/"
+    testOne = readJsonAtLocation(pathToJSON + "testCase1.json")
+    testTwo = readJsonAtLocation(pathToJSON + "testCase2.json")
+    testThree = readJsonAtLocation(pathToJSON + "testCase3.json")
+    testFour = readJsonAtLocation(pathToJSON + "testCase4.json")
+    testFive = readJsonAtLocation(pathToJSON + "testCase5.json")
+
     # Construct the report for the first method
     resultsFilePath = "temp/" + methodName + "/"
 
     reportFile.write("<h3 style=\"color:blue;\">" + methodName + "()</h3>\n")
 
-    writeTestResults(resultsFilePath + "testCase1results.txt", "one")
-    writeTestResults(resultsFilePath + "testCase2results.txt", "two")
-    writeTestResults(resultsFilePath + "testCase3results.txt", "three")
-    writeTestResults(resultsFilePath + "testCase4results.txt", "four")
-    writeTestResults(resultsFilePath + "testCase5results.txt", "five")
+    writeTestResults(resultsFilePath + "testCase1results.txt", "one", testOne)
+    writeTestResults(resultsFilePath + "testCase2results.txt", "two", testTwo)
+    writeTestResults(resultsFilePath + "testCase3results.txt", "three", testThree)
+    writeTestResults(resultsFilePath + "testCase4results.txt", "four", testFour)
+    writeTestResults(resultsFilePath + "testCase5results.txt", "five", testFive)
 
     reportFile.write("<hr>\n\n")
 
@@ -27,7 +34,8 @@ def writeMethodResults(methodName):
 ####################################################################################################
 ####################################################################################################
 
-def writeTestResults(filePath, testNum):
+def writeTestResults(filePath, testNum, testJson):
+    
     resultsFile= open(filePath)
 
     i = 0
