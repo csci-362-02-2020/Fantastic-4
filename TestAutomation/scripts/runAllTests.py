@@ -3,7 +3,7 @@ import json
 import webbrowser
 
 # Open the report file
-reportFile = open("../reports/testReport.html", "w")
+reportFile = open("reports/testReport.html", "w")
 
 ####################################################################################################
 ####################################################################################################
@@ -11,7 +11,7 @@ reportFile = open("../reports/testReport.html", "w")
 
 def writeMethodResults(methodName):
     # Construct the report for the first method
-    resultsFilePath = "../temp/" + methodName + "/"
+    resultsFilePath = "temp/" + methodName + "/"
 
     reportFile.write("<h3 style=\"color:blue;\">" + methodName + "()</h3>\n")
 
@@ -65,7 +65,7 @@ def constructReport(methodNames):
 ####################################################################################################
 
 def testMethod(methodName):
-    pathToJSON = "../testCases/" + methodName + "/"
+    pathToJSON = "testCases/" + methodName + "/"
     testOne = readJsonAtLocation(pathToJSON + "testCase1.json")
     testTwo = readJsonAtLocation(pathToJSON + "testCase2.json")
     testThree = readJsonAtLocation(pathToJSON + "testCase3.json")
@@ -116,7 +116,7 @@ def cleanOutTempFoder(testCaseJSON):
     id = testCaseJSON["id"]
     
     # Build the file path
-    tempFolderFullPath = "../temp/" + methodName + "/testCase" + str(id) + "results.txt"
+    tempFolderFullPath = "temp/" + methodName + "/testCase" + str(id) + "results.txt"
     tempFolder = tempFolderFullPath[0:tempFolderFullPath.rindex("/")]
     
     # Go to the directory
@@ -126,7 +126,7 @@ def cleanOutTempFoder(testCaseJSON):
     os.system("rm *")
 
     # Change the directory back to the way it was...
-    os.chdir("../../scripts")
+    os.chdir("../../")
 
 ####################################################################################################
 ####################################################################################################
@@ -169,7 +169,7 @@ def cleanUpTestCaseExe(testCaseJSON):
     os.system("rm " + splitFileName[0] + ".*")
 
     # Change the directory back to the way it was...
-    os.chdir("../../scripts")
+    os.chdir("../../")
 
 ####################################################################################################
 ####################################################################################################
@@ -236,7 +236,7 @@ def compileAndRunJavaFileAtLocationWithInputOutputToFile(filePath, input, output
         command += item + " "
 
     # Add the output file to the command
-    command += "> " + "../" + outputFilePath
+    command += "> " + "../../" + outputFilePath
 
     # Run the compiled file
     os.system(command)
@@ -245,7 +245,7 @@ def compileAndRunJavaFileAtLocationWithInputOutputToFile(filePath, input, output
     os.system("rm " + splitFileName[0] + ".class")
 
     # Change the directory back to the way it was...
-    os.chdir("../../scripts")
+    os.chdir("../../")
 
 ####################################################################################################
 ####################################################################################################
@@ -273,7 +273,7 @@ def compileJavaFileAtLocation(filePath):
     os.system("javac " + fileName)
 
     # Change the directory back to the way it was...
-    os.chdir("../../scripts")
+    os.chdir("../../")
 
 ####################################################################################################
 ####################################################################################################
@@ -302,7 +302,7 @@ def readJsonAtLocation(filePath):
     jsonData = json.load(jsonFile)
 
     # Change the directory back to the way it was...
-    os.chdir("../../scripts")
+    os.chdir("../../")
 
     return jsonData
 
@@ -332,7 +332,7 @@ def copyFromProjectToTestCaseExe(pathFrom, pathTo):
     os.system("rm temp.txt")
     
     # Change the directory back to the way it was...
-    os.chdir("../../scripts")
+    os.chdir("../../")
 
 ####################################################################################################
 ####################################################################################################
@@ -357,7 +357,7 @@ def runTestCase(testCaseJSON):
     id = testCaseJSON["id"]
 
     # Build the output file
-    outFilePath = "../temp/" + methodName + "/testCase" + str(id) + "results.txt"
+    outFilePath = "temp/" + methodName + "/testCase" + str(id) + "results.txt"
     compileAndRunJavaFileAtLocationWithInputOutputToFile(driverPath, inputArray, outFilePath)
 
 ####################################################################################################
@@ -373,7 +373,7 @@ def main():
     # Get the method names
     methodNames = []
 
-    os.system("ls ../testCases > methodNames.txt")
+    os.system("ls testCases > methodNames.txt")
 
     tempFile = open("methodNames.txt", "r")
 
@@ -393,7 +393,7 @@ def main():
     # Open the html file in the browser
     new = 2 # open in a new tab, if possible
     print("Opening the html file")
-    webbrowser.open("../reports/testReport.html", new=new)
+    webbrowser.open("reports/testReport.html", new=new)
 
 ####################################################################################################
 ####################################################################################################

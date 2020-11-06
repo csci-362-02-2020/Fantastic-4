@@ -1,9 +1,9 @@
 {
   "id": 3,
   "requirement": "Method computes the log(n!)",
-  "component": "../project/BinomialDistributionUtil.java",
+  "component": "project/BinomialDistributionUtil.java",
   "method": "lnFactorial",
-  "driver": "../testCasesExecutables/lnFactorial/testCase.java",
-  "input": "2000000000",
-  "output": "4.083282604664613E10"
+  "driver": "testCasesExecutables/lnFactorial/testCase.java",
+  "input": "2000000",
+  "output": "2.701732365031526E7"
 }

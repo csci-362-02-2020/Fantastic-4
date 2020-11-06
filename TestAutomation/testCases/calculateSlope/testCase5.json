@@ -1,9 +1,9 @@
 {
   "id": 5,
   "requirement": "Method calculates the slope of a line",
-  "component": "../project/LinearLeastSquaresFit.java",
+  "component": "project/LinearLeastSquaresFit.java",
   "method": "calculateSlope",
-  "driver": "../testCasesExecutables/calculateSlope/testCase.java",
+  "driver": "testCasesExecutables/calculateSlope/testCase.java",
   "input": "64.2387634 64.5908703477 64.24089753 64.5906543",
   "output": "-0.10123448901101095"
 }
