@@ -42,7 +42,7 @@ def writeTestResults(filePath, testNum, testJson):
 
     for line in resultsFile:
         if (i == 0):
-            reportFile.write("<h4>" + line.strip() + "</h4>\n")
+            reportFile.write("<h4>" + line.strip().replace(":", "") + " " + testNum + ":" + "</h4>\n")
         elif ("passed" in line):
             reportFile.write("<p>Test " + testNum + "<i style=\"color:green;\"> passed</i>!</p>\n")
         elif ("failed" in line):
