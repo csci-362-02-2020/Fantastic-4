@@ -76,15 +76,15 @@ def writeTestResults(filePath, testNum, testJson):
 
     # The values
     reportFile.write("<tr>\n")
-    reportFile.write("<td>" + str(testJson["id"]) + "</td>")
-    reportFile.write("<td>" + whatItDid + "</td>")
-    reportFile.write("<td>" + testJson["input"] + "</td>")
-    reportFile.write("<td>" + oracle + "</td>")
-    reportFile.write("<td>" + result + "</td>")
-    reportFile.write("<td>" + passFailError + "</td>")
+    reportFile.write("<td>" + str(testJson["id"]) + "</td>\n")
+    reportFile.write("<td>" + whatItDid + "</td>\n")
+    reportFile.write("<td>" + testJson["input"] + "</td>\n")
+    reportFile.write("<td>" + oracle + "</td>\n")
+    reportFile.write("<td>" + result + "</td>\n")
+    reportFile.write("<td>" + passFailError + "</td>\n")
     reportFile.write("</tr>\n")
 
-    reportFile.write("\n\n\n")
+    reportFile.write("\n")
 
 ####################################################################################################
 ####################################################################################################
