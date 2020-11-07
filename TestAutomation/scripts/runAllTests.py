@@ -28,6 +28,7 @@ def writeMethodResults(methodName):
 
     # Write the table headings
     reportFile.write("<tr>\n")
+    reportFile.write("<th>" + "ID" + "</th>")
     reportFile.write("<th>" + "What it did" + "</th>")
     reportFile.write("<th>" + "Input" + "</th>")
     reportFile.write("<th>" + "Oracle" + "</th>")
@@ -75,6 +76,7 @@ def writeTestResults(filePath, testNum, testJson):
 
     # The values
     reportFile.write("<tr>\n")
+    reportFile.write("<td>" + str(testJson["id"]) + "</td>")
     reportFile.write("<td>" + whatItDid + "</td>")
     reportFile.write("<td>" + testJson["input"] + "</td>")
     reportFile.write("<td>" + oracle + "</td>")
