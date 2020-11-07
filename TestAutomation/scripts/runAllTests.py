@@ -21,12 +21,15 @@ def writeMethodResults(methodName):
     resultsFilePath = "temp/" + methodName + "/"
 
     reportFile.write("<h3 style=\"color:teal;\">" + methodName + "()</h3>\n")
+    
+    reportFile.write("<i>" + testOne["requirement"] + "</i>\n")
 
     reportFile.write("<table>\n")
 
     # Write the table headings
     reportFile.write("<tr>\n")
     reportFile.write("<th>" + "What it did" + "</th>")
+    reportFile.write("<th>" + "Input" + "</th>")
     reportFile.write("<th>" + "Oracle" + "</th>")
     reportFile.write("<th>" + "Result" + "</th>")
     reportFile.write("<th>" + "Pass-Fail-Error" + "</th>")
@@ -73,6 +76,7 @@ def writeTestResults(filePath, testNum, testJson):
     # The values
     reportFile.write("<tr>\n")
     reportFile.write("<td>" + whatItDid + "</td>")
+    reportFile.write("<td>" + testJson["input"] + "</td>")
     reportFile.write("<td>" + oracle + "</td>")
     reportFile.write("<td>" + result + "</td>")
     reportFile.write("<td>" + passFailError + "</td>")
