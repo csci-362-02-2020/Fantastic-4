@@ -18,7 +18,7 @@ public class testCase {
         double distance = pointOne.compareTo(pointTwo);
 
         System.out.println("Test:");
-        System.out.printf("Compare Points (%f,%f) and (%f,%f)\n", pointOneX, pointOneY, pointTwoX, pointTwoY);
+        System.out.printf("Compare points (%f,%f) and (%f,%f)\n", pointOneX, pointOneY, pointTwoX, pointTwoY);
 
         System.out.println("Result: " + distance);
 

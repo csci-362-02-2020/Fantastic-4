@@ -1,4 +1,5 @@
 Test:
-ln(2000000!): 2.701732365031526E7
+Calculate ln(2000000!)
+Result: 2.701732365031526E7
 Oracle: 2.701732365031526E7
 Test one passed!

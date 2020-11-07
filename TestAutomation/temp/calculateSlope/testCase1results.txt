@@ -1,5 +1,5 @@
 Test:
 Calculate slope bettween (5.000000, 3.000000) and (4.000000, 7.000000)
-Slope: -4.0
+Result: -4.0
 Oracle: -4.0
 Test one passed!

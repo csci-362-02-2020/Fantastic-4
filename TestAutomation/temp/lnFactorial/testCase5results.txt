@@ -1,4 +1,5 @@
 Test:
-ln(3!): 1.791759469228055
+Calculate ln(3!)
+Result: 1.791759469228055
 Oracle: 1.791759469228055
 Test one passed!

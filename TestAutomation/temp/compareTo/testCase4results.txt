@@ -1,5 +1,5 @@
 Test:
-Compare Points (1.000000,0.000000) and (0.000000,0.000000)
+Compare points (1.000000,0.000000) and (0.000000,0.000000)
 Result: 1.0
 Oracle: 1.0
 Test one passed!

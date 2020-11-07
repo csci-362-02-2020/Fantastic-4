@@ -1,4 +1,5 @@
 Test:
-ln(0!): 0.0
+Calculate ln(0!)
+Result: 0.0
 Oracle: 0.0
 Test one passed!

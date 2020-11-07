@@ -13,7 +13,9 @@ public class testCase {
 
         // Print test number
         System.out.println("Test:");
-        System.out.println("ln(" + testOne + "!): " + value);
+        System.out.println("Calculate ln(" + testOne + "!)");
+        
+        System.out.println("Result: " + value);
 
         // Print out test result
         double testOracle = Double.parseDouble(args[1]);

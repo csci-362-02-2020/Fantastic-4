@@ -30,7 +30,7 @@ public class testCase {
         System.out.println("Test:");
         System.out.printf("Calculate slope bettween (%f, %f) and (%f, %f)\n", x1, y1, x2, y2);
 
-        System.out.println("Slope: " + slope);
+        System.out.println("Result: " + slope);
 
         // Test passed
         if (slope == testOracle) {
