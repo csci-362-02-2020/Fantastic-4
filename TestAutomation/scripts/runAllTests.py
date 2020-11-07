@@ -20,13 +20,26 @@ def writeMethodResults(methodName):
     # Construct the report for the first method
     resultsFilePath = "temp/" + methodName + "/"
 
-    reportFile.write("<h3 style=\"color:blue;\">" + methodName + "()</h3>\n")
+    reportFile.write("<h3 style=\"color:teal;\">" + methodName + "()</h3>\n")
 
+    reportFile.write("<table>\n")
+
+    # Write the table headings
+    reportFile.write("<tr>\n")
+    reportFile.write("<th>" + "What it did" + "</th>")
+    reportFile.write("<th>" + "Oracle" + "</th>")
+    reportFile.write("<th>" + "Result" + "</th>")
+    reportFile.write("<th>" + "Pass-Fail-Error" + "</th>")
+    reportFile.write("</tr>\n")
+
+    # Write the test results for each method
     writeTestResults(resultsFilePath + "testCase1results.txt", "one", testOne)
     writeTestResults(resultsFilePath + "testCase2results.txt", "two", testTwo)
     writeTestResults(resultsFilePath + "testCase3results.txt", "three", testThree)
     writeTestResults(resultsFilePath + "testCase4results.txt", "four", testFour)
     writeTestResults(resultsFilePath + "testCase5results.txt", "five", testFive)
+
+    reportFile.write("</table>\n\n")
 
     reportFile.write("<hr>\n\n")
 
@@ -38,19 +51,32 @@ def writeTestResults(filePath, testNum, testJson):
     
     resultsFile= open(filePath)
 
+    whatItDid = ""
+    result = ""
+    oracle = ""
+    passFailError = ""
+
     i = 0
 
     for line in resultsFile:
-        if (i == 0):
-            reportFile.write("<h4>" + line.strip().replace(":", "") + " " + testNum + ":" + "</h4>\n")
-        elif ("passed" in line):
-            reportFile.write("<p>Test " + testNum + "<i style=\"color:green;\"> passed</i>!</p>\n")
-        elif ("failed" in line):
-            reportFile.write("<p>Test " + testNum + "<i style=\"color:red;\"> failed</i>!</p>\n")
-        else:
-            reportFile.write("<p>" + line.strip() + "</p>\n")
+        if i == 1:
+            whatItDid = line
+        elif i == 2:
+            result = line.replace("Result: ", "")
+        elif i == 3:
+            oracle = line.replace("Oracle: ", "")
+        elif i == 4:
+            passFailError = line
 
         i += 1
+
+    # The values
+    reportFile.write("<tr>\n")
+    reportFile.write("<td>" + whatItDid + "</td>")
+    reportFile.write("<td>" + oracle + "</td>")
+    reportFile.write("<td>" + result + "</td>")
+    reportFile.write("<td>" + passFailError + "</td>")
+    reportFile.write("</tr>\n")
 
     reportFile.write("\n\n\n")
 
@@ -60,6 +86,13 @@ def writeTestResults(filePath, testNum, testJson):
 
 def constructReport(methodNames):
     print("Constructing final report")
+
+    # Write the style to the HTML file
+    styleFile = open("reports/style.css", "r")
+    reportFile.write("<style>\n")
+    for line in styleFile:
+        reportFile.write(line)
+    reportFile.write("\n</style>\n\n")
 
     # Write the first line
     reportFile.write("<h1>Test Results</h1>\n\n")

@@ -23,16 +23,16 @@ public class testCase {
         // Test passed
         if (value == testOracle) {
             System.out.println("Oracle: " + testOracle);
-            System.out.println("Test one passed!");
+            System.out.println("Pass");
         }
         // Test failed
         else if (value != testOracle) {
             System.out.println("Oracle: " + testOracle);
-            System.out.println("Test one failed...");
+            System.out.println("Fail");
         }
         // Test ERROR
         else {
-            System.out.println("Test one ERROR");
+            System.out.println("ERROR");
         }
     }
 }

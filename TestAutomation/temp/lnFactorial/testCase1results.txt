@@ -2,4 +2,4 @@ Test:
 Calculate ln(0!)
 Result: 0.0
 Oracle: 0.0
-Test one passed!
+Pass

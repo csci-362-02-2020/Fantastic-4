@@ -2,4 +2,4 @@ Test:
 Calculate slope bettween (64.238763, 64.590870) and (64.240898, 64.590654)
 Result: -0.10123448901101095
 Oracle: -0.10123448901101095
-Test one passed!
+Pass

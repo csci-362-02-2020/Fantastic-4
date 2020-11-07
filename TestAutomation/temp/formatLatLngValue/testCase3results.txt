@@ -2,4 +2,4 @@ Test:
 Format -126.1253799
 Result: -126.0
 Oracle: -126.0
-Test one passed!
+Pass
