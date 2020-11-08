@@ -9,20 +9,40 @@ reportFile = open("reports/testReport.html", "w")
 ####################################################################################################
 ####################################################################################################
 
-def writeMethodResults(methodName):
+def returnJsonFiles(methodName):
+    # Create the array
+    jsonFiles = []
+
+    # Assign the path to the JSON object
     pathToJSON = "testCases/" + methodName + "/"
-    testOne = readJsonAtLocation(pathToJSON + "testCase1.json")
-    testTwo = readJsonAtLocation(pathToJSON + "testCase2.json")
-    testThree = readJsonAtLocation(pathToJSON + "testCase3.json")
-    testFour = readJsonAtLocation(pathToJSON + "testCase4.json")
-    testFive = readJsonAtLocation(pathToJSON + "testCase5.json")
+
+    # Run the ls command in the test case folder
+    os.system("ls ./testCases/" + methodName + " > temp.txt")
+
+    # Open the temp file
+    tempFile = open("temp.txt", "r")
+
+    for line in tempFile:
+        jsonFiles.append(readJsonAtLocation(pathToJSON + line.replace("\n", "")))
+
+    # Remove the temp file
+    os.system("rm temp.txt")
+
+    return jsonFiles
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
+
+def writeMethodResults(methodName):
+    jsonFiles = returnJsonFiles(methodName)
 
     # Construct the report for the first method
     resultsFilePath = "temp/" + methodName + "/"
 
     reportFile.write("<h3 style=\"color:teal;\">" + methodName + "()</h3>\n")
     
-    reportFile.write("<i>" + testOne["requirement"] + "</i>\n")
+    reportFile.write("<i>" + jsonFiles[0]["requirement"] + "</i>\n")
 
     reportFile.write("<table>\n")
 
@@ -36,12 +56,8 @@ def writeMethodResults(methodName):
     reportFile.write("<th>" + "Pass-Fail-Error" + "</th>")
     reportFile.write("</tr>\n")
 
-    # Write the test results for each method
-    writeTestResults(resultsFilePath + "testCase1results.txt", "one", testOne)
-    writeTestResults(resultsFilePath + "testCase2results.txt", "two", testTwo)
-    writeTestResults(resultsFilePath + "testCase3results.txt", "three", testThree)
-    writeTestResults(resultsFilePath + "testCase4results.txt", "four", testFour)
-    writeTestResults(resultsFilePath + "testCase5results.txt", "five", testFive)
+    for file in jsonFiles:
+        writeTestResults(resultsFilePath + "testCase" + str(file["id"]) + "results.txt", file)
 
     reportFile.write("</table>\n\n")
 
@@ -51,7 +67,7 @@ def writeMethodResults(methodName):
 ####################################################################################################
 ####################################################################################################
 
-def writeTestResults(filePath, testNum, testJson):
+def writeTestResults(filePath, testJson):
     
     resultsFile= open(filePath)
 
@@ -112,39 +128,24 @@ def constructReport(methodNames):
 ####################################################################################################
 
 def testMethod(methodName):
-    pathToJSON = "testCases/" + methodName + "/"
-    testOne = readJsonAtLocation(pathToJSON + "testCase1.json")
-    testTwo = readJsonAtLocation(pathToJSON + "testCase2.json")
-    testThree = readJsonAtLocation(pathToJSON + "testCase3.json")
-    testFour = readJsonAtLocation(pathToJSON + "testCase4.json")
-    testFive = readJsonAtLocation(pathToJSON + "testCase5.json")
+    jsonFiles = returnJsonFiles(methodName)
 
     # You only run this once per method...
-    moveProjectFileandCompile(testOne)
+    moveProjectFileandCompile(jsonFiles[0])
 
     # You only run this once per method...
-    cleanOutTempFoder(testOne)
+    cleanOutTempFoder(jsonFiles[0])
 
     print("Testing " + methodName + ":")
 
-    # Test case 1
-    print("Running test 1")
-    runTestCase(testOne)
-    # Test case 2
-    print("Running test 2")
-    runTestCase(testTwo)
-    # Test case 3
-    print("Running test 3")
-    runTestCase(testThree)
-    # Test case 4
-    print("Running test 4")
-    runTestCase(testFour)
-    # Test case 5
-    print("Running test 5\n")
-    runTestCase(testFive)
+    for file in jsonFiles:
+        print("Running test " + str(file["id"]))
+        runTestCase(file)
+
+    print()
 
     # You only run this once per method...
-    cleanUpTestCaseExe(testOne)
+    cleanUpTestCaseExe(jsonFiles[0])
 
 ####################################################################################################
 ####################################################################################################
