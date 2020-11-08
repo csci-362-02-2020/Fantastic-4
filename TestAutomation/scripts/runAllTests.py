@@ -421,14 +421,14 @@ def main():
     # Get the method names
     methodNames = []
 
-    os.system("ls testCases > methodNames.txt")
+    os.system("ls testCases > temp.txt")
 
-    tempFile = open("methodNames.txt", "r")
+    tempFile = open("temp.txt", "r")
 
     for line in tempFile:
         methodNames.append(line.strip())
 
-    os.system("rm methodNames.txt")
+    os.system("rm temp.txt")
 
     for method in methodNames:
         testMethod(method)
