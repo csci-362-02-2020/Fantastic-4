@@ -97,7 +97,10 @@ def writeTestResults(filePath, testJson):
     reportFile.write("<td>" + testJson["input"] + "</td>\n")
     reportFile.write("<td>" + oracle.replace("\n", "") + "</td>\n")
     reportFile.write("<td>" + output.replace("\n", "") + "</td>\n")
-    reportFile.write("<td>" + result.replace("\n", "") + "</td>\n")
+    if (result.replace("\n", "") == "Pass"):
+        reportFile.write("<td style=\"color:green;\">" + result.replace("\n", "") + "</td>\n")
+    else:
+        reportFile.write("<td style=\"color:red;\">" + result.replace("\n", "") + "</td>\n")
     reportFile.write("</tr>\n")
 
     reportFile.write("\n")
