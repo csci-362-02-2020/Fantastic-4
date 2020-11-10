@@ -49,11 +49,11 @@ def writeMethodResults(methodName):
     # Write the table headings
     reportFile.write("<tr>\n")
     reportFile.write("<th>" + "ID" + "</th>")
-    reportFile.write("<th>" + "What it did" + "</th>")
+    reportFile.write("<th>" + "Calculation" + "</th>")
     reportFile.write("<th>" + "Input" + "</th>")
     reportFile.write("<th>" + "Oracle" + "</th>")
+    reportFile.write("<th>" + "Output" + "</th>")
     reportFile.write("<th>" + "Result" + "</th>")
-    reportFile.write("<th>" + "Pass-Fail-Error" + "</th>")
     reportFile.write("</tr>\n")
 
     for file in jsonFiles:
@@ -71,33 +71,33 @@ def writeTestResults(filePath, testJson):
     
     resultsFile= open(filePath)
 
-    whatItDid = ""
-    result = ""
+    calculation = ""
     oracle = ""
-    passFailError = ""
+    output = ""
+    result = ""
 
     i = 0
 
     for line in resultsFile:
         if i == 1:
-            whatItDid = line
+            calculation = line
         elif i == 2:
-            result = line.replace("Result: ", "")
+            output = line.replace("Result: ", "")
         elif i == 3:
             oracle = line.replace("Oracle: ", "")
         elif i == 4:
-            passFailError = line
+            result = line
 
         i += 1
 
     # The values
     reportFile.write("<tr>\n")
     reportFile.write("<td>" + str(testJson["id"]) + "</td>\n")
-    reportFile.write("<td>" + whatItDid + "</td>\n")
+    reportFile.write("<td>" + calculation.replace("\n", "") + "</td>\n")
     reportFile.write("<td>" + testJson["input"] + "</td>\n")
-    reportFile.write("<td>" + oracle + "</td>\n")
-    reportFile.write("<td>" + result + "</td>\n")
-    reportFile.write("<td>" + passFailError + "</td>\n")
+    reportFile.write("<td>" + oracle.replace("\n", "") + "</td>\n")
+    reportFile.write("<td>" + output.replace("\n", "") + "</td>\n")
+    reportFile.write("<td>" + result.replace("\n", "") + "</td>\n")
     reportFile.write("</tr>\n")
 
     reportFile.write("\n")
