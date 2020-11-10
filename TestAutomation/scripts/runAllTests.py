@@ -217,6 +217,7 @@ def cleanUpTestCaseExe(testCaseJSON):
     splitFileName = fileName.split(".")
 
     # Remove all files with that name, regardless of extension
+    os.system("rm " + "*.class")
     os.system("rm " + splitFileName[0] + ".*")
 
     # Change the directory back to the way it was...
