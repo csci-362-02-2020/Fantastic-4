@@ -17,15 +17,15 @@ Steps taken to run all tests...
 8. Unzip the repo to any location on your VM.
 9. Open a terminal and navigate to where the zipped repo is stored.
 10. Run the following command to unzip the repo...
-	a. unzip Fantastic-4-master.zip
+	a. `unzip Fantastic-4-master.zip`
 12. Navigate to the folder that houses the unzipped repo.
 13. Type the following commands to install python and java…
-	a. sudo apt-get update
-	b. sudo apt-get install python3.9
-	c. sudo apt-get install openjdk-8-jdk
+	a. `sudo apt-get update`
+	b. `sudo apt-get install python3.9`
+	c. `sudo apt-get install openjdk-8-jdk`
 14. Type the following commands to run all tests…
-	a. cd Fantastic-4-master/TestAutomation/
-	b. python3.9 ./scripts/runAllTests.py
+	a. `cd Fantastic-4-master/TestAutomation/`
+	b. `python3.9 ./scripts/runAllTests.py`
 
 *Note: The program will open an html file in the browser...*
 *You may have to hit the refresh button a few times for the page to load.*
