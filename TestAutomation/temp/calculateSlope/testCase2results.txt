@@ -1,5 +1,5 @@
 Test:
-Calculate slope bettween (-3.000000, 3.000000) and (3.000000, -3.000000)
+Calculate slope between (-3.000000, 3.000000) and (3.000000, -3.000000)
 Result: -1.0
 Oracle: -1.0
 Pass

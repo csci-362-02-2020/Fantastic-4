@@ -49,7 +49,6 @@ def writeMethodResults(methodName):
     # Write the table headings
     reportFile.write("<tr>\n")
     reportFile.write("<th>" + "ID" + "</th>")
-    reportFile.write("<th>" + "Calculation" + "</th>")
     reportFile.write("<th>" + "Input" + "</th>")
     reportFile.write("<th>" + "Oracle" + "</th>")
     reportFile.write("<th>" + "Output" + "</th>")
@@ -70,8 +69,6 @@ def writeMethodResults(methodName):
 def writeTestResults(filePath, testJson):
     
     resultsFile= open(filePath)
-
-    calculation = ""
     oracle = ""
     output = ""
     result = ""
@@ -93,7 +90,6 @@ def writeTestResults(filePath, testJson):
     # The values
     reportFile.write("<tr>\n")
     reportFile.write("<td>" + str(testJson["id"]) + "</td>\n")
-    reportFile.write("<td>" + calculation.replace("\n", "") + "</td>\n")
     reportFile.write("<td>" + testJson["input"] + "</td>\n")
     reportFile.write("<td>" + oracle.replace("\n", "") + "</td>\n")
     reportFile.write("<td>" + output.replace("\n", "") + "</td>\n")

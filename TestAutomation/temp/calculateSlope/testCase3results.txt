@@ -1,5 +1,5 @@
 Test:
-Calculate slope bettween (136.000000, -38.000000) and (17.000000, -32.000000)
+Calculate slope between (136.000000, -38.000000) and (17.000000, -32.000000)
 Result: -0.05042016806722689
 Oracle: -0.05042016806722689
 Pass
