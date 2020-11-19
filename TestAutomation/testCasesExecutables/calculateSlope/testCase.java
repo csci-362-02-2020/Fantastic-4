@@ -28,7 +28,7 @@ public class testCase {
 
         // Print test number
         System.out.println("Test:");
-        System.out.printf("Calculate slope bettween (%f, %f) and (%f, %f)\n", x1, y1, x2, y2);
+        System.out.printf("Calculate slope between (%f, %f) and (%f, %f)\n", x1, y1, x2, y2);
 
         System.out.println("Result: " + slope);
 
