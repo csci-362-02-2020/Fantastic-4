@@ -56,7 +56,7 @@ def writeMethodResults(methodName):
     reportFile.write("</tr>\n")
 
     for file in jsonFiles:
-        writeTestResults(resultsFilePath + "testCase" + str(file["id"]) + "results.txt", file)
+        writeTestResults(resultsFilePath + methodName + "TestCase" + str(file["id"]) + "results.txt", file)
 
     reportFile.write("</table>\n\n")
 
@@ -403,7 +403,7 @@ def runTestCase(testCaseJSON):
     id = testCaseJSON["id"]
 
     # Build the output file
-    outFilePath = "temp/" + methodName + "/testCase" + str(id) + "results.txt"
+    outFilePath = "temp/" + methodName + "/" + methodName + "TestCase" + str(id) + "results.txt"
     compileAndRunJavaFileAtLocationWithInputOutputToFile(driverPath, inputArray, outFilePath)
 
 ####################################################################################################
