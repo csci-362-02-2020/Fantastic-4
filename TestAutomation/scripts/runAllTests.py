@@ -76,9 +76,7 @@ def writeTestResults(filePath, testJson):
     i = 0
 
     for line in resultsFile:
-        if i == 1:
-            calculation = line
-        elif i == 2:
+        if i == 2:
             output = line.replace("Result: ", "")
         elif i == 3:
             oracle = line.replace("Oracle: ", "")
