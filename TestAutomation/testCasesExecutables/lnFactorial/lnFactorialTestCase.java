@@ -1,33 +1,32 @@
 
-public class testCase {
+public class lnFactorialTestCase {
     public static void main(String[] args) {
 
         // Instantiate the Binomial Distribution Utility class
-        LatLong LatLongClass = new LatLong();
+        BinomialDistributionUtil BinomialDistributionUtil = new BinomialDistributionUtil();
 
         // Test 1: Normal numerical value in range
-        double input = Double.parseDouble(args[0]);
-
-        double fractionalDigits = Double.parseDouble(args[1]);
-
-        String testOracle = args[2];
+        int testOne = Integer.parseInt(args[0]);
         
         // Run the actual method we are testing
-        String result = LatLong.formatLatLngValue(input, fractionalDigits);
+        double value = BinomialDistributionUtil.lnFactorial(testOne);
 
         // Print test number
         System.out.println("Test:");
-        System.out.println("Format " + input);
+        System.out.println("Calculate ln(" + testOne + "!)");
+        
+        System.out.println("Result: " + value);
 
-        System.out.println("Result: " + result);
+        // Print out test result
+        double testOracle = Double.parseDouble(args[1]);
 
         // Test passed
-        if (result.equals(testOracle)) {
+        if (value == testOracle) {
             System.out.println("Oracle: " + testOracle);
             System.out.println("Pass");
         }
         // Test failed
-        else if (!result.equals(testOracle)) {
+        else if (value != testOracle) {
             System.out.println("Oracle: " + testOracle);
             System.out.println("Fail");
         }

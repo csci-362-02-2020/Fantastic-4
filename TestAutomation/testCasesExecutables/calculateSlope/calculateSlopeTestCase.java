@@ -1,7 +1,7 @@
 import java.util.*; 
 import java.util.function.Supplier; 
 
-public class testCase {
+public class calculateSlopeTestCase {
     public static void main(String[] args) {
 
         // Assign values from input

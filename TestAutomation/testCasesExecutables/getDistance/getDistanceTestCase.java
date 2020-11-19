@@ -1,4 +1,4 @@
-public class testCase {
+public class getDistanceTestCase {
     public static void main(String[] args) {
 
         // Get values from input
