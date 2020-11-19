@@ -217,7 +217,7 @@ def cleanUpTestCaseExe(testCaseJSON):
     os.system("rm " + splitFileName[0] + ".*")
 
     # Change the directory back to the way it was...
-    os.chdir("../../")
+    os.chdir("../")
 
 ####################################################################################################
 ####################################################################################################
@@ -284,7 +284,7 @@ def compileAndRunJavaFileAtLocationWithInputOutputToFile(filePath, input, output
         command += item + " "
 
     # Add the output file to the command
-    command += "> " + "../../" + outputFilePath
+    command += "> " + "../" + outputFilePath
 
     # Run the compiled file
     os.system(command)
@@ -293,7 +293,7 @@ def compileAndRunJavaFileAtLocationWithInputOutputToFile(filePath, input, output
     os.system("rm " + splitFileName[0] + ".class")
 
     # Change the directory back to the way it was...
-    os.chdir("../../")
+    os.chdir("../")
 
 ####################################################################################################
 ####################################################################################################
@@ -321,7 +321,7 @@ def compileJavaFileAtLocation(filePath):
     os.system("javac " + fileName)
 
     # Change the directory back to the way it was...
-    os.chdir("../../")
+    os.chdir("../")
 
 ####################################################################################################
 ####################################################################################################
@@ -380,7 +380,7 @@ def copyFromProjectToTestCaseExe(pathFrom, pathTo):
     os.system("rm temp.txt")
     
     # Change the directory back to the way it was...
-    os.chdir("../../")
+    os.chdir("../")
 
 ####################################################################################################
 ####################################################################################################

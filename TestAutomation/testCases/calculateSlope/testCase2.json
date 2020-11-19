@@ -3,7 +3,7 @@
   "requirement": "Method calculates the slope of a line",
   "component": "project/LinearLeastSquaresFit.java",
   "method": "calculateSlope",
-  "driver": "testCasesExecutables/calculateSlope/calculateSlopeTestCase.java",
+  "driver": "testCasesExecutables/calculateSlopeTestCase.java",
   "input": "-3 3 3 -3",
   "output": "-1"
 }

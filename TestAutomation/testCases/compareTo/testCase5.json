@@ -3,7 +3,7 @@
   "requirement": "Method sorts coordinates by their x value",
   "component": "project/PhaseSpaceCoordinate.java",
   "method": "compareTo",
-  "driver": "testCasesExecutables/compareTo/compareToTestCase.java",
+  "driver": "testCasesExecutables/compareToTestCase.java",
   "input": "92 92 92 92",
   "output": "0"
 }
