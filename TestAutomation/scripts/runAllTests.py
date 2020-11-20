@@ -360,7 +360,7 @@ def main():
     
     os.system("rm temp.txt")
 
-    # Construct the HTML file and open it in the browser
+    # Construct the HTML file
     constructReport()
 
     for testCase in testCaseNames:
