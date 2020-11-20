@@ -357,9 +357,6 @@ def main():
 
 ####################################################################################################
 
-    # Clean out temp folder
-    cleanOutTempFoder()
-
     # Get the method names
     testCaseNames = []
 
@@ -389,6 +386,7 @@ def main():
         runTestCase(jsonFile)
         cleanUpTestCaseExe(jsonFile)
         writeTestResults("temp/" + jsonFile["method"] + "TestCase" + str(jsonFile["id"]) + "results.txt", jsonFile)
+        os.system("rm ./temp/" + jsonFile["method"] + "TestCase" + str(jsonFile["id"]) + "results.txt")
 
     closeOutHTMLFile()
 
@@ -398,11 +396,6 @@ def main():
     new = 2 # open in a new tab, if possible
     print("Opening the html file")
     webbrowser.open("reports/testReport.html", new=new)
-
-    # Clean out temp folder
-    cleanOutTempFoder()
-
-    os.system("touch ./temp/testCase1results")
 
 ####################################################################################################
 ####################################################################################################
