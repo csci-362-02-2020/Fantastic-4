@@ -1,9 +1,18 @@
 import os
 import json
 import webbrowser
+import re
 
 # Open the report file
 reportFile = open("reports/testReport.html", "w")
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
+
+def closeOutHTMLFile():
+    reportFile.write("</table>\n\n")
+    reportFile.write("<hr>\n\n")
 
 ####################################################################################################
 ####################################################################################################
@@ -351,18 +360,25 @@ def main():
     # Get the method names
     testCaseNames = []
 
+    # Call the ls command on the testCases directory
     os.system("ls testCases > temp.txt")
 
+    # Open the temp file
     tempFile = open("temp.txt", "r")
 
+    # Put all the test case names into an array
     for line in tempFile:
         testCaseNames.append(line.replace("\n", ""))
+
+    # Sort the test cases based on ID number
+    testCaseNames.sort(key=lambda test_string:list(map(int, re.findall(r'\d+', test_string)))[0])
     
     os.system("rm temp.txt")
 
     # Construct the HTML file
     constructReport()
 
+    # Run each test case
     for testCase in testCaseNames:
         jsonFile = readJsonAtLocation("testCases/" + testCase)
         print("Running test " + str(jsonFile["id"]))
@@ -371,9 +387,7 @@ def main():
         cleanUpTestCaseExe(jsonFile)
         writeTestResults("temp/" + jsonFile["method"] + "TestCase" + str(jsonFile["id"]) + "results.txt", jsonFile)
 
-    reportFile.write("</table>\n\n")
-
-    reportFile.write("<hr>\n\n")
+    closeOutHTMLFile()
 
 ####################################################################################################
 
