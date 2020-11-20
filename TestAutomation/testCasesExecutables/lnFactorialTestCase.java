@@ -1,8 +1,8 @@
 
 public class lnFactorialTestCase {
     public static void main(String[] args) {
-
-        // Instantiate the Binomial Distribution Utility class
+        try {
+            // Instantiate the Binomial Distribution Utility class
         BinomialDistributionUtil BinomialDistributionUtil = new BinomialDistributionUtil();
 
         // Test 1: Normal numerical value in range
@@ -26,12 +26,11 @@ public class lnFactorialTestCase {
             System.out.println("Pass");
         }
         // Test failed
-        else if (value != testOracle) {
+        else {
             System.out.println("Oracle: " + testOracle);
             System.out.println("Fail");
         }
-        // Test ERROR
-        else {
+        } catch (Exception e) {
             System.out.println("ERROR");
         }
     }

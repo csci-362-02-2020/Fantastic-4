@@ -1,7 +1,7 @@
 
 public class formatLatLngValueTestCase {
     public static void main(String[] args) {
-
+        try {
         // Instantiate the Binomial Distribution Utility class
         LatLong LatLongClass = new LatLong();
 
@@ -27,13 +27,13 @@ public class formatLatLngValueTestCase {
             System.out.println("Pass");
         }
         // Test failed
-        else if (!result.equals(testOracle)) {
+        else {
             System.out.println("Oracle: " + testOracle);
             System.out.println("Fail");
         }
-        // Test ERROR
-        else {
+        } catch (Exception e) {
             System.out.println("ERROR");
         }
+        
     }
 }

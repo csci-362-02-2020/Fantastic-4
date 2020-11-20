@@ -3,7 +3,7 @@ import java.util.function.Supplier;
 
 public class calculateSlopeTestCase {
     public static void main(String[] args) {
-
+        try {
         // Assign values from input
         Double x1 = Double.parseDouble(args[0]);
         Double y1 = Double.parseDouble(args[1]);
@@ -38,12 +38,11 @@ public class calculateSlopeTestCase {
             System.out.println("Pass");
         }
         // Test failed
-        else if (slope != testOracle) {
+        else {
             System.out.println("Oracle: " + testOracle);
             System.out.println("Fail");
         }
-        // Test ERROR
-        else {
+        } catch (Exception e) {
             System.out.println("ERROR");
         }
     }

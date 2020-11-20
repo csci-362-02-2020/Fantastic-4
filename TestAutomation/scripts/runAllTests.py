@@ -76,7 +76,12 @@ def writeTestResults(filePath, testJson):
     i = 0
 
     for line in resultsFile:
-        if i == 2:
+        if i == 0 and line.replace("\n", "") == "ERROR":
+            output = "ERROR"
+            result = "ERROR"
+            oracle = testJson["output"]
+            break
+        elif i == 2:
             output = line.replace("Result: ", "")
         elif i == 3:
             oracle = line.replace("Oracle: ", "")
@@ -93,6 +98,8 @@ def writeTestResults(filePath, testJson):
     reportFile.write("<td>" + output.replace("\n", "") + "</td>\n")
     if (result.replace("\n", "") == "Pass"):
         reportFile.write("<td style=\"color:green;\">" + result.replace("\n", "") + "</td>\n")
+    elif (result == "ERROR"):
+        reportFile.write("<td style=\"color:purple;\">" + result.replace("\n", "") + "</td>\n")
     else:
         reportFile.write("<td style=\"color:red;\">" + result.replace("\n", "") + "</td>\n")
     reportFile.write("</tr>\n")

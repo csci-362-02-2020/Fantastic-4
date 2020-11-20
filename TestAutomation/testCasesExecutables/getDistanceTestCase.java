@@ -1,6 +1,6 @@
 public class getDistanceTestCase {
     public static void main(String[] args) {
-
+        try {
         // Get values from input
         double pointOneX = Double.parseDouble(args[0]);
         double pointOneY = Double.parseDouble(args[1]);
@@ -28,14 +28,12 @@ public class getDistanceTestCase {
             System.out.println("Pass");
         }
         // Test failed
-        else if (distance != testOracle) {
+        else {
             System.out.println("Oracle: " + testOracle);
             System.out.println("Fail");
         }
-        // Test ERROR
-        else {
+        } catch (Exception e) {
             System.out.println("ERROR");
         }
-
     }
 }
