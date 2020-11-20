@@ -1,5 +1,0 @@
-Test:
-Caculate distance bettween (5.000000,5.000000) and (5.000000,5.000000)
-Result: 0.0
-Oracle: 0.0
-Pass

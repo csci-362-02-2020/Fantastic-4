@@ -38,7 +38,7 @@ def writeMethodResults(methodName):
     jsonFiles = returnJsonFiles(methodName)
 
     # Construct the report for the first method
-    resultsFilePath = "temp/" + methodName + "/"
+    resultsFilePath = "temp/"
 
     reportFile.write("<h3 style=\"color:teal;\">" + methodName + "()</h3>\n")
     
@@ -130,9 +130,6 @@ def testMethod(methodName):
     # You only run this once per method...
     moveProjectFileandCompile(jsonFiles[0])
 
-    # You only run this once per method...
-    cleanOutTempFoder(jsonFiles[0])
-
     print("Testing " + methodName + ":")
 
     for file in jsonFiles:
@@ -152,26 +149,19 @@ def testMethod(methodName):
 
 # This method will clean out the TEMP folder
 
-# Input: Test JSON file
+# Input: None
 # Output: NONE (clean TEMP folder)
 
-def cleanOutTempFoder(testCaseJSON):
-    # Run the test case and print the results to a file
-    methodName = testCaseJSON["method"]
-    id = testCaseJSON["id"]
-    
-    # Build the file path
-    tempFolderFullPath = "temp/" + methodName + "/testCase" + str(id) + "results.txt"
-    tempFolder = tempFolderFullPath[0:tempFolderFullPath.rindex("/")]
+def cleanOutTempFoder():
     
     # Go to the directory
-    os.chdir(tempFolder)
+    os.chdir("temp/")
 
     # Remove everything from the temp folder
-    os.system("rm *")
+    os.system("rm -r *")
 
     # Change the directory back to the way it was...
-    os.chdir("../../")
+    os.chdir("../")
 
 ####################################################################################################
 ####################################################################################################
@@ -403,7 +393,7 @@ def runTestCase(testCaseJSON):
     id = testCaseJSON["id"]
 
     # Build the output file
-    outFilePath = "temp/" + methodName + "/" + methodName + "TestCase" + str(id) + "results.txt"
+    outFilePath = "temp/" + methodName + "TestCase" + str(id) + "results.txt"
     compileAndRunJavaFileAtLocationWithInputOutputToFile(driverPath, inputArray, outFilePath)
 
 ####################################################################################################
@@ -440,6 +430,9 @@ def main():
     new = 2 # open in a new tab, if possible
     print("Opening the html file")
     webbrowser.open("reports/testReport.html", new=new)
+
+    # Clean out temp folder
+    cleanOutTempFoder()
 
 ####################################################################################################
 ####################################################################################################

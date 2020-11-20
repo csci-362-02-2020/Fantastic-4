@@ -1,5 +1,0 @@
-Test:
-Calculate ln(1!)
-Result: 0.0
-Oracle: 0.0
-Pass

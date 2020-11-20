@@ -1,5 +1,0 @@
-Test:
-Format 0.128427
-Result: 0.1284
-Oracle: 0.1284
-Pass

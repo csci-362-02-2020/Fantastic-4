@@ -1,5 +1,0 @@
-Test:
-Calculate ln(3!)
-Result: 1.791759469228055
-Oracle: 1.791759469228055
-Pass

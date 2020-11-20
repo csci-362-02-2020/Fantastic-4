@@ -1,5 +1,0 @@
-Test:
-Compare points (92.000000,92.000000) and (92.000000,92.000000)
-Result: 0.0
-Oracle: 0.0
-Pass

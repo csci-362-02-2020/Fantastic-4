@@ -1,5 +1,0 @@
-Test:
-Caculate distance bettween (-52.000000,-3.000000) and (-23.000000,-45.000000)
-Result: 51.03920062069938
-Oracle: 51.03920062069938
-Pass
