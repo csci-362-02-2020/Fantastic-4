@@ -20,13 +20,113 @@ tr:nth-child(even) {
 
 <hr>
 
-<h3 style="color:teal;">calculateSlope()</h3>
-<i>Method calculates the slope of a line</i>
 <table>
 <tr>
-<th>ID</th><th>Input</th><th>Oracle</th><th>Output</th><th>Result</th></tr>
+<th>ID</th><th>Method</th><th>Requirement</th><th>Input</th><th>Oracle</th><th>Output</th><th>Result</th></tr>
+<tr>
+<td>10</td>
+<td>compareTo</td>
+<td>Method sorts coordinates by their x value</td>
+<td>92 92 92 92</td>
+<td>0.0</td>
+<td>0.0</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>formatLatLngValue</td>
+<td>Method converts double value into a fractional string with default number of decimal places</td>
+<td>1253404.47262174 3</td>
+<td>1253404.472</td>
+<td>1253404.472</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>formatLatLngValue</td>
+<td>Method converts double value into a fractional string with default number of decimal places</td>
+<td>0.128427 4</td>
+<td>0.1284</td>
+<td>0.1284</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>formatLatLngValue</td>
+<td>Method converts double value into a fractional string with default number of decimal places</td>
+<td>-126.1253799 0</td>
+<td>-126.0</td>
+<td>-126.0</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>formatLatLngValue</td>
+<td>Method converts double value into a fractional string with default number of decimal places</td>
+<td>-54727143.0234885 2</td>
+<td>-5.472714302E7</td>
+<td>-5.472714302E7</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>formatLatLngValue</td>
+<td>Method converts double value into a fractional string with default number of decimal places</td>
+<td>9120370981409.12309714287894513 8</td>
+<td>9.223372036854776E10</td>
+<td>9.223372036854776E10</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>16</td>
+<td>getDistance</td>
+<td>Method returns the distance between this point and other point in phase space</td>
+<td>5 5 5 5</td>
+<td>0.0</td>
+<td>0.0</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>17</td>
+<td>getDistance</td>
+<td>Method returns the distance between this point and other point in phase space</td>
+<td>7 3 4 9</td>
+<td>6.708203932499369</td>
+<td>6.708203932499369</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>18</td>
+<td>getDistance</td>
+<td>Method returns the distance between this point and other point in phase space</td>
+<td>-52 -3 -23 -45</td>
+<td>51.03920062069938</td>
+<td>51.03920062069938</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>19</td>
+<td>getDistance</td>
+<td>Method returns the distance between this point and other point in phase space</td>
+<td>0 0 0 0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td style="color:green;">Pass</td>
+</tr>
+
 <tr>
 <td>1</td>
+<td>calculateSlope</td>
+<td>Method calculates the slope of a line</td>
 <td>5 3 4 7</td>
 <td>-4.0</td>
 <td>-4.0</td>
@@ -34,7 +134,69 @@ tr:nth-child(even) {
 </tr>
 
 <tr>
+<td>20</td>
+<td>getDistance</td>
+<td>Method returns the distance between this point and other point in phase space</td>
+<td>120983 12349078 487094 430803248</td>
+<td>4.18454330157609E8</td>
+<td>4.18454330157609E8</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>21</td>
+<td>lnFactorial</td>
+<td>Method computes the log(n!)</td>
+<td>0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>22</td>
+<td>lnFactorial</td>
+<td>Method computes the log(n!)</td>
+<td>-5</td>
+<td>0.0</td>
+<td>0.0</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>23</td>
+<td>lnFactorial</td>
+<td>Method computes the log(n!)</td>
+<td>2000000</td>
+<td>2.701732365031526E7</td>
+<td>2.701732365031526E7</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>24</td>
+<td>lnFactorial</td>
+<td>Method computes the log(n!)</td>
+<td>1</td>
+<td>0.0</td>
+<td>0.0</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
+<td>25</td>
+<td>lnFactorial</td>
+<td>Method computes the log(n!)</td>
+<td>3</td>
+<td>1.791759469228055</td>
+<td>1.791759469228055</td>
+<td style="color:green;">Pass</td>
+</tr>
+
+<tr>
 <td>2</td>
+<td>calculateSlope</td>
+<td>Method calculates the slope of a line</td>
 <td>-3 3 3 -3</td>
 <td>-1.0</td>
 <td>-1.0</td>
@@ -43,6 +205,8 @@ tr:nth-child(even) {
 
 <tr>
 <td>3</td>
+<td>calculateSlope</td>
+<td>Method calculates the slope of a line</td>
 <td>136 -38 17 -32</td>
 <td>-0.05042016806722689</td>
 <td>-0.05042016806722689</td>
@@ -51,6 +215,8 @@ tr:nth-child(even) {
 
 <tr>
 <td>4</td>
+<td>calculateSlope</td>
+<td>Method calculates the slope of a line</td>
 <td>35943 4037823 132894 650983</td>
 <td>-34.93352311992656</td>
 <td>-34.93352311992656</td>
@@ -59,23 +225,18 @@ tr:nth-child(even) {
 
 <tr>
 <td>5</td>
+<td>calculateSlope</td>
+<td>Method calculates the slope of a line</td>
 <td>64.2387634 64.5908703477 64.24089753 64.5906543</td>
 <td>-0.10123448901101095</td>
 <td>-0.10123448901101095</td>
 <td style="color:green;">Pass</td>
 </tr>
 
-</table>
-
-<hr>
-
-<h3 style="color:teal;">compareTo()</h3>
-<i>Method sorts coordinates by their x value</i>
-<table>
 <tr>
-<th>ID</th><th>Input</th><th>Oracle</th><th>Output</th><th>Result</th></tr>
-<tr>
-<td>1</td>
+<td>6</td>
+<td>compareTo</td>
+<td>Method sorts coordinates by their x value</td>
 <td>5 -63 72 38</td>
 <td>-1.0</td>
 <td>-1.0</td>
@@ -83,7 +244,9 @@ tr:nth-child(even) {
 </tr>
 
 <tr>
-<td>2</td>
+<td>7</td>
+<td>compareTo</td>
+<td>Method sorts coordinates by their x value</td>
 <td>0 0 1 0</td>
 <td>-1.0</td>
 <td>-1.0</td>
@@ -91,7 +254,9 @@ tr:nth-child(even) {
 </tr>
 
 <tr>
-<td>3</td>
+<td>8</td>
+<td>compareTo</td>
+<td>Method sorts coordinates by their x value</td>
 <td>136 -38 17 -32</td>
 <td>1.0</td>
 <td>1.0</td>
@@ -99,165 +264,12 @@ tr:nth-child(even) {
 </tr>
 
 <tr>
-<td>4</td>
+<td>9</td>
+<td>compareTo</td>
+<td>Method sorts coordinates by their x value</td>
 <td>1 0 0 0</td>
 <td>1.0</td>
 <td>1.0</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>5</td>
-<td>92 92 92 92</td>
-<td>0.0</td>
-<td>0.0</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-</table>
-
-<hr>
-
-<h3 style="color:teal;">formatLatLngValue()</h3>
-<i>Method converts double value into a fractional string with default number of decimal places</i>
-<table>
-<tr>
-<th>ID</th><th>Input</th><th>Oracle</th><th>Output</th><th>Result</th></tr>
-<tr>
-<td>1</td>
-<td>1253404.47262174 3</td>
-<td>1253404.472</td>
-<td>1253404.472</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>0.128427 4</td>
-<td>0.1284</td>
-<td>0.1284</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>-126.1253799 0</td>
-<td>-126.0</td>
-<td>-126.0</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>4</td>
-<td>-54727143.0234885 2</td>
-<td>-5.472714302E7</td>
-<td>-5.472714302E7</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>5</td>
-<td>9120370981409.12309714287894513 8</td>
-<td>9.223372036854776E10</td>
-<td>9.223372036854776E10</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-</table>
-
-<hr>
-
-<h3 style="color:teal;">getDistance()</h3>
-<i>Method returns the distance between this point and other point in phase space</i>
-<table>
-<tr>
-<th>ID</th><th>Input</th><th>Oracle</th><th>Output</th><th>Result</th></tr>
-<tr>
-<td>1</td>
-<td>5 5 5 5</td>
-<td>0.0</td>
-<td>0.0</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>7 3 4 9</td>
-<td>6.708203932499369</td>
-<td>6.708203932499369</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>-52 -3 -23 -45</td>
-<td>51.03920062069938</td>
-<td>51.03920062069938</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>4</td>
-<td>0 0 0 0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>5</td>
-<td>120983 12349078 487094 430803248</td>
-<td>4.18454330157609E8</td>
-<td>4.18454330157609E8</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-</table>
-
-<hr>
-
-<h3 style="color:teal;">lnFactorial()</h3>
-<i>Method computes the log(n!)</i>
-<table>
-<tr>
-<th>ID</th><th>Input</th><th>Oracle</th><th>Output</th><th>Result</th></tr>
-<tr>
-<td>1</td>
-<td>0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>-5</td>
-<td>0.0</td>
-<td>0.0</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>2000000</td>
-<td>2.701732365031526E7</td>
-<td>2.701732365031526E7</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>4</td>
-<td>1</td>
-<td>0.0</td>
-<td>0.0</td>
-<td style="color:green;">Pass</td>
-</tr>
-
-<tr>
-<td>5</td>
-<td>3</td>
-<td>1.791759469228055</td>
-<td>1.791759469228055</td>
 <td style="color:green;">Pass</td>
 </tr>
 

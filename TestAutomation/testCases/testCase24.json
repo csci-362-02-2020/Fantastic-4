@@ -1,5 +1,5 @@
 {
-  "id": 4,
+  "id": 24,
   "requirement": "Method computes the log(n!)",
   "component": "project/BinomialDistributionUtil.java",
   "method": "lnFactorial",

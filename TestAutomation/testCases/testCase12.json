@@ -1,9 +1,9 @@
 {
-  "id": 3,
+  "id": 12,
   "requirement": "Method converts double value into a fractional string with default number of decimal places",
   "component": "project/LatLong.java",
   "method": "formatLatLngValue",
   "driver": "testCasesExecutables/formatLatLngValueTestCase.java",
-  "input": "-126.1253799 0",
-  "output": "-126.0"
+  "input": "0.128427 4",
+  "output": "0.1284"
 }

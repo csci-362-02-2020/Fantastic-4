@@ -1,9 +1,9 @@
 {
-  "id": 2,
+  "id": 10,
   "requirement": "Method sorts coordinates by their x value",
   "component": "project/PhaseSpaceCoordinate.java",
   "method": "compareTo",
   "driver": "testCasesExecutables/compareToTestCase.java",
-  "input": "0 0 1 0",
-  "output": "-1"
+  "input": "92 92 92 92",
+  "output": "0"
 }

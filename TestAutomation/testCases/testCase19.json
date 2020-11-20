@@ -1,9 +1,9 @@
 {
-  "id": 5,
+  "id": 19,
   "requirement": "Method returns the distance between this point and other point in phase space",
   "component": "project/PhaseSpaceCoordinate.java",
   "method": "getDistance",
   "driver": "testCasesExecutables/getDistanceTestCase.java",
-  "input": "120983 12349078 487094 430803248",
-  "output": "4.18454330157609E8"
+  "input": "0 0 0 0",
+  "output": "0"
 }

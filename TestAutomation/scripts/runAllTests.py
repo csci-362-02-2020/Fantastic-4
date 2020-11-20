@@ -9,66 +9,10 @@ reportFile = open("reports/testReport.html", "w")
 ####################################################################################################
 ####################################################################################################
 
-def returnJsonFiles(methodName):
-    # Create the array
-    jsonFiles = []
-
-    # Assign the path to the JSON object
-    pathToJSON = "testCases/" + methodName + "/"
-
-    # Run the ls command in the test case folder
-    os.system("ls ./testCases/" + methodName + " > temp.txt")
-
-    # Open the temp file
-    tempFile = open("temp.txt", "r")
-
-    for line in tempFile:
-        jsonFiles.append(readJsonAtLocation(pathToJSON + line.replace("\n", "")))
-
-    # Remove the temp file
-    os.system("rm temp.txt")
-
-    return jsonFiles
-
-####################################################################################################
-####################################################################################################
-####################################################################################################
-
-def writeMethodResults(methodName):
-    jsonFiles = returnJsonFiles(methodName)
-
-    # Construct the report for the first method
-    resultsFilePath = "temp/"
-
-    reportFile.write("<h3 style=\"color:teal;\">" + methodName + "()</h3>\n")
-    
-    reportFile.write("<i>" + jsonFiles[0]["requirement"] + "</i>\n")
-
-    reportFile.write("<table>\n")
-
-    # Write the table headings
-    reportFile.write("<tr>\n")
-    reportFile.write("<th>" + "ID" + "</th>")
-    reportFile.write("<th>" + "Input" + "</th>")
-    reportFile.write("<th>" + "Oracle" + "</th>")
-    reportFile.write("<th>" + "Output" + "</th>")
-    reportFile.write("<th>" + "Result" + "</th>")
-    reportFile.write("</tr>\n")
-
-    for file in jsonFiles:
-        writeTestResults(resultsFilePath + methodName + "TestCase" + str(file["id"]) + "results.txt", file)
-
-    reportFile.write("</table>\n\n")
-
-    reportFile.write("<hr>\n\n")
-
-####################################################################################################
-####################################################################################################
-####################################################################################################
-
 def writeTestResults(filePath, testJson):
     
     resultsFile= open(filePath)
+
     oracle = ""
     output = ""
     result = ""
@@ -93,6 +37,8 @@ def writeTestResults(filePath, testJson):
     # The values
     reportFile.write("<tr>\n")
     reportFile.write("<td>" + str(testJson["id"]) + "</td>\n")
+    reportFile.write("<td>" + testJson["method"] + "</td>\n")
+    reportFile.write("<td>" + testJson["requirement"] + "</td>\n")
     reportFile.write("<td>" + testJson["input"] + "</td>\n")
     reportFile.write("<td>" + oracle.replace("\n", "") + "</td>\n")
     reportFile.write("<td>" + output.replace("\n", "") + "</td>\n")
@@ -110,8 +56,7 @@ def writeTestResults(filePath, testJson):
 ####################################################################################################
 ####################################################################################################
 
-def constructReport(methodNames):
-    print("Constructing final report")
+def constructReport():
 
     # Write the style to the HTML file
     styleFile = open("reports/style.css", "r")
@@ -123,30 +68,19 @@ def constructReport(methodNames):
     # Write the first line
     reportFile.write("<h1>Test Results</h1>\n\n")
     reportFile.write("<hr>\n\n")
-    
-    for method in methodNames:
-        writeMethodResults(method)
 
-####################################################################################################
-####################################################################################################
-####################################################################################################
+    reportFile.write("<table>\n")
 
-def testMethod(methodName):
-    jsonFiles = returnJsonFiles(methodName)
-
-    # You only run this once per method...
-    moveProjectFileandCompile(jsonFiles[0])
-
-    print("Testing " + methodName + ":")
-
-    for file in jsonFiles:
-        print("Running test " + str(file["id"]))
-        runTestCase(file)
-
-    print()
-
-    # You only run this once per method...
-    cleanUpTestCaseExe(jsonFiles[0])
+    # Write the table headings
+    reportFile.write("<tr>\n")
+    reportFile.write("<th>" + "ID" + "</th>")
+    reportFile.write("<th>" + "Method" + "</th>")
+    reportFile.write("<th>" + "Requirement" + "</th>")
+    reportFile.write("<th>" + "Input" + "</th>")
+    reportFile.write("<th>" + "Oracle" + "</th>")
+    reportFile.write("<th>" + "Output" + "</th>")
+    reportFile.write("<th>" + "Result" + "</th>")
+    reportFile.write("</tr>\n")
 
 ####################################################################################################
 ####################################################################################################
@@ -225,6 +159,7 @@ def cleanUpTestCaseExe(testCaseJSON):
 # Output: NONE
 
 def moveProjectFileandCompile(testCaseJSON):
+
     # Get the path to the component
     componentPath = testCaseJSON["component"]
 
@@ -345,7 +280,7 @@ def readJsonAtLocation(filePath):
     jsonData = json.load(jsonFile)
 
     # Change the directory back to the way it was...
-    os.chdir("../../")
+    os.chdir("../")
 
     return jsonData
 
@@ -414,24 +349,33 @@ def main():
 ####################################################################################################
 
     # Get the method names
-    methodNames = []
+    testCaseNames = []
 
     os.system("ls testCases > temp.txt")
 
     tempFile = open("temp.txt", "r")
 
     for line in tempFile:
-        methodNames.append(line.strip())
-
+        testCaseNames.append(line.replace("\n", ""))
+    
     os.system("rm temp.txt")
 
-    for method in methodNames:
-        testMethod(method)
+    # Construct the HTML file and open it in the browser
+    constructReport()
+
+    for testCase in testCaseNames:
+        jsonFile = readJsonAtLocation("testCases/" + testCase)
+        print("Running test " + str(jsonFile["id"]))
+        moveProjectFileandCompile(jsonFile)
+        runTestCase(jsonFile)
+        cleanUpTestCaseExe(jsonFile)
+        writeTestResults("temp/" + jsonFile["method"] + "TestCase" + str(jsonFile["id"]) + "results.txt", jsonFile)
+
+    reportFile.write("</table>\n\n")
+
+    reportFile.write("<hr>\n\n")
 
 ####################################################################################################
-
-    # Construct the HTML file and open it in the browser
-    constructReport(methodNames)
 
     # Open the html file in the browser
     new = 2 # open in a new tab, if possible
