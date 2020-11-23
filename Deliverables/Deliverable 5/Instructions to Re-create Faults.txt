@@ -1,0 +1,126 @@
+Follow the following instructions to recreate the faults for deliverable #5…
+
+##########################################################################################
+
+lnFactorial() Fault:
+File Name = BinomialDistributionUtil.java
+
+New faulted code... Insert the following code in place of the current code on lines 71-79
+
+##########
+static double lnFactorial(int n) {
+    double retVal = 0.0;
+
+    for (int i = 1; i <= retVal; i++) {
+        retVal += Math.log((double)i);
+    }
+
+    return retVal;
+}
+##########
+
+Test 23 and 25 will fail.
+
+##########################################################################################
+
+formatLatLngValue() Fault:
+File Name = LatLong.java
+
+New faulted code... Insert the following code in place of the current code on lines 108-112
+
+##########
+static String formatLatLngValue(double value, double fracDigits) {
+    double power = fracDigits * fracDigits;
+    return String.valueOf(((long)(value*power))/power);
+}
+##########
+
+All tests will fail.
+
+##########################################################################################
+
+calculateSlope() Fault:
+File Name = LinearLeastSquaresFit.java
+
+New faulted code... Insert the following code in place of the current code on lines 162-198
+
+##########
+public double calculateSlope(List<Double> xList, List<Double> yList) {
+    int npts = xList.size();
+    assert(npts == yList.size());
+
+    //x, y for least squares fitting to line y = alpha*x - beta
+    double[] x = new double[npts];
+    double[] y = new double[npts];
+
+    for(int j = 0; j < npts; j++){
+        x[j] = xList.get(j).doubleValue();
+        y[j] = yList.get(j).doubleValue();
+    }
+
+    // do the fit
+    double sumx  = 0;
+    double sumy = 0;
+    double sumxy = 0;
+    double sumx2 = 0;
+    double sumy2 = 0;
+    double sum = 0;
+
+    for(int j = 0; j < npts; j++){
+        sumx += x[j];
+        sumy += y[j];
+        sumxy += x[j] * y[j];
+        sumx2 += x[j] * x[j];
+        sumy2 += y[j] * y[j];
+        sum += 1;
+    }
+
+    double delta = -(sum * sumx2 - sumx * sumx);
+
+    // get the slope
+    slope = (sumx * sumy + sum * sumxy )/delta;
+
+    return slope;
+}
+##########
+
+All tests will fail.
+
+##########################################################################################
+
+getDistance() Fault:
+File Name = PhaseSpaceCoordinate.java
+
+New faulted code... Insert the following code in place of the current code on lines 93-99
+
+##########
+public double getDistance(PhaseSpaceCoordinate otherPoint) {
+    double dist2 = ((this.xValue - otherPoint.xValue)*(this.xValue - otherPoint.xValue))+
+                    ((this.yValue - otherPoint.yValue)*(this.yValue - otherPoint.yValue));
+
+    return dist;
+}
+##########
+
+Test 17, 18, and 20 will fail.
+
+##########################################################################################
+
+compareTo() Fault:
+File Name = PhaseSpaceCoordinate.java
+
+New faulted code... Insert the following code in place of the current code on lines 105-111
+
+##########
+public int compareTo(Object otherCoord) throws ClassCastException {
+    if (!(otherCoord instanceof PhaseSpaceCoordinate)) throw new ClassCastException("A Person object expected.");
+    double otherX = ((PhaseSpaceCoordinate)otherCoord).xValue;
+    if (this.xValue < otherX) return 1;
+    if (this.xValue > otherX) return -1;
+    return 0;
+}
+##########
+
+Test 6, 7, 8, and 9 will fail.
+
+##########################################################################################
