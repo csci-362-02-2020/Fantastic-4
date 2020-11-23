@@ -98,7 +98,7 @@ public double getDistance(PhaseSpaceCoordinate otherPoint) {
     double dist2 = ((this.xValue - otherPoint.xValue)*(this.xValue - otherPoint.xValue))+
                     ((this.yValue - otherPoint.yValue)*(this.yValue - otherPoint.yValue));
 
-    return dist;
+    return dist2;
 }
 ##########
 
