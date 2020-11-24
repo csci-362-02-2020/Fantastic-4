@@ -357,7 +357,7 @@ def main():
 
 ####################################################################################################
 
-    # Get the method names
+    # Get test cases
     testCaseNames = []
 
     # Call the ls command on the testCases directory
